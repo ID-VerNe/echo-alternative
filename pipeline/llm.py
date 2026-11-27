@@ -1,13 +1,22 @@
-"""LLM 客户端（OpenAI 兼容）。带重试、并发安全、reasoning 字段兼容。"""
+"""LLM 客户端（OpenAI 兼容）。用 curl 子进程，带硬超时 + 磁盘缓存 + 重试。
+缓存键 = payload 的 md5，换 prompt 即换缓存，重复实验不重复等待。"""
+import hashlib
 import json
+import subprocess
 import time
-import urllib.error
-import urllib.request
 
 from . import config
 
+CACHE_DIR = config.ROOT / ".cache" / "llm"
+CACHE_DIR.mkdir(parents=True, exist_ok=True)
 
-def chat(messages, temperature=0.7, max_tokens=2600, retries=3, timeout=180):
+
+def _key(payload):
+    raw = json.dumps(payload, ensure_ascii=False, sort_keys=True)
+    return hashlib.md5(raw.encode()).hexdigest()
+
+
+def chat(messages, temperature=0.7, max_tokens=2600, retries=2, max_time=300):
     payload = {
         "model": config.MODEL,
         "messages": messages,
@@ -15,26 +24,35 @@ def chat(messages, temperature=0.7, max_tokens=2600, retries=3, timeout=180):
         "max_tokens": max_tokens,
         "stream": False,
     }
+    key = _key(payload)
+    cache = CACHE_DIR / f"{key}.txt"
+    if cache.exists():
+        return cache.read_text(encoding="utf-8")
+
+    body_file = CACHE_DIR / f"{key}.req.json"
+    body_file.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
     last_err = None
     for attempt in range(retries):
-        req = urllib.request.Request(
-            config.API_BASE + "/v1/chat/completions",
-            data=json.dumps(payload).encode(),
-            headers={"Authorization": "Bearer " + config.API_KEY,
-                     "Content-Type": "application/json",
-                     "User-Agent": config.UA},
+        r = subprocess.run(
+            ["curl.exe", "-sS", "--max-time", str(max_time),
+             "-H", "Authorization: Bearer " + config.API_KEY,
+             "-H", "Content-Type: application/json",
+             "-d", "@" + str(body_file),
+             config.API_BASE + "/v1/chat/completions"],
+            capture_output=True, text=True, encoding="utf-8", errors="ignore",
         )
         try:
-            with urllib.request.urlopen(req, timeout=timeout) as resp:
-                body = json.loads(resp.read().decode())
-            ch = body["choices"][0]["message"]
-            content = (ch.get("content") or "").strip()
+            obj = json.loads(r.stdout)
+            if "error" in obj:
+                raise RuntimeError(str(obj["error"])[:200])
+            content = (obj["choices"][0]["message"].get("content") or "").strip()
             if not content:
                 raise ValueError("empty content (likely all tokens went to reasoning)")
+            cache.write_text(content, encoding="utf-8")
             return content
         except Exception as e:  # noqa: BLE001
             last_err = e
-            time.sleep(1.5 * (attempt + 1))
+            time.sleep(2 + attempt * 2)
     raise RuntimeError(f"LLM call failed: {last_err}")
 
 

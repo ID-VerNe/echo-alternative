@@ -40,6 +40,15 @@ CRITIC_BANNED = [
 
 
 def classify(question):
+    """规则优先（零调用、零延迟），不确定才问模型。"""
+    q = question.lower()
+    if re.search(r"\b(should i|is it worth|would you|is it acceptable|are .{0,20} worth|"
+                 r"better than|do i need)\b", q):
+        return "argument"
+    if re.search(r"\b(what do you think|why|menace|con|scam|rip-?off|hate)\b", q):
+        return "rant"
+    if re.search(r"\b(my |i have|my neighbour|my colleague|i'm |what should i do)\b", q):
+        return "anecdote"
     try:
         raw = llm.chat([{"role": "system", "content": CLASSIFY_SYS},
                         {"role": "user", "content": question}],
@@ -55,15 +64,15 @@ def draft(question, intent):
                     temperature=0.3, max_tokens=2000)
 
 
-def stylize(question, notes, anchors, spec_prompt, min_words=200, max_words=300):
-    refs = "\n\n".join(f"[{a['intent']}] {a['text']}" for a in anchors)
+def stylize(question, notes, anchors, spec_prompt, min_words=170, max_words=230):
+    refs = "\n\n".join(f"[{a['intent']}] {a['text'][:900]}" for a in anchors)
     user = (f"{STYLE_GUARD}\n\n=== STYLE REFERENCES ===\n{refs}\n\n"
             f"=== BRIEF ===\n{notes}\n\n"
             f"=== TASK ===\nAnswer this question: {question}\n"
             f"Length: {min_words}-{max_words} words, 2 to 3 paragraphs. No headings, no bullets, no markdown.")
     return llm.chat([{"role": "system", "content": spec_prompt},
                      {"role": "user", "content": user}],
-                    temperature=0.85, max_tokens=2600)
+                    temperature=0.85, max_tokens=4000)
 
 
 def critic(text, banned_extra=None):
@@ -118,19 +127,28 @@ Write in his voice: blunt, opinionated, funny, exaggerated, rude about things yo
 fond of Britain and machines. Use short punchy sentences. Be entertaining."""
 
 
-def baseline(question, min_words=200, max_words=300):
+def baseline(question, min_words=170, max_words=230):
     return llm.chat([{"role": "system", "content": PERSONA},
                      {"role": "user", "content": f"{question}\n\nWrite {min_words}-{max_words} words."}],
-                    temperature=0.85, max_tokens=2600)
+                    temperature=0.85, max_tokens=4000)
 
 
-def run(question, anchors, spec, trace=None, min_words=200, max_words=300):
+def run(question, anchors, spec, trace=None, min_words=170, max_words=230):
     intent = classify(question)
     notes = draft(question, intent)
     refs = anc_mod.sample_anchors(anchors, intent, k=4, seed=abs(hash(question)) % 9999)
     spec_prompt = spec["compiled_prompt"]
     out = stylize(question, notes, refs, spec_prompt, min_words, max_words)
+    # 防串台：与参考段落的 10-gram 重叠
+    ref_texts = [a["text"] for a in refs]
+    g = metrics.StyleMetrics.ngrams(out, 10)
+    src = set()
+    for t in ref_texts:
+        src |= metrics.StyleMetrics.ngrams(t, 10)
+    copied = len(g & src)
     issues = critic(out, spec.get("banned_phrases"))
+    if copied >= 2:
+        issues = [i for i in issues if not i.startswith("banned")] + [f"copies {copied} long phrases from the references"]
     fixed = None
     if issues:
         fixed = repair(out, issues, spec_prompt)

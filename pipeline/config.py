@@ -9,7 +9,7 @@ OUTPUTS = ROOT / "outputs"
 PROMPTS = ROOT / "pipeline" / "prompts"
 
 API_BASE = "https://api.yuuverne.ccwu.cc"
-MODEL = "100milionseek/deepseek-v4.1-flash-free"
+MODEL = "coarena/gpt-6-luna"
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/131.0 Safari/537.36")
 

@@ -16,7 +16,7 @@ def _key(payload):
     return hashlib.md5(raw.encode()).hexdigest()
 
 
-def chat(messages, temperature=0.7, max_tokens=2600, retries=2, max_time=300):
+def chat(messages, temperature=0.7, max_tokens=2600, retries=3, max_time=120):
     payload = {
         "model": config.MODEL,
         "messages": messages,

@@ -5,13 +5,16 @@ import json
 import random
 import re
 import sys
-from concurrent.futures import ThreadPoolExecutor
+import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from pipeline import anchors, config, corpus, generate, llm, metrics, stylevec, textutil  # noqa: E402
 
-OUT = config.OUTPUTS / "e06"
+LIMIT = int(sys.argv[1]) if len(sys.argv) > 1 else 12
+SPECV = sys.argv[2] if len(sys.argv) > 2 else "v1"
+OUT = config.OUTPUTS / (f"e06_{SPECV}" + ("" if LIMIT >= 12 else f"_s{LIMIT}"))
 OUT.mkdir(parents=True, exist_ok=True)
 
 QUESTIONS = [
@@ -30,7 +33,8 @@ QUESTIONS = [
 ]
 
 anchors_list = anchors.load(config.ARTIFACTS / "anchors.jsonl")
-spec = json.loads((config.ARTIFACTS / "style_spec_v1.json").read_text(encoding="utf-8"))
+spec = json.loads((config.ARTIFACTS / f"style_spec_{SPECV}.json").read_text(encoding="utf-8"))
+print(f"spec={SPECV} questions={LIMIT}", flush=True)
 
 print("loading metrics …")
 train = corpus.load_jsonl(config.ARTIFACTS / "train_paras.jsonl")
@@ -65,16 +69,35 @@ def score_text(text, ref_anchors):
 
 
 def run_one(q):
-    r = generate.run(q, anchors_list, spec)
+    t0 = time.time()
+    last = None
+    for attempt in range(3):
+        try:
+            r = generate.run(q, anchors_list, spec)
+            break
+        except Exception as e:  # noqa: BLE001
+            last = e
+            print(f"  [retry {attempt+1}] {q[:36]}: {str(e)[:80]}", flush=True)
+            time.sleep(4)
+    else:
+        raise last
     b = generate.baseline(q)
     r["metrics"] = score_text(r["final"], [a for a in anchors_list if a["aid"] in r["anchors"]])
     b_m = score_text(b, [])
     b_m["facts"] = None
+    print(f"  [done {time.time()-t0:.0f}s] {q[:40]} | intent={r['intent']} "
+          f"issues={len(r['issues'])} words={r['metrics']['words']}", flush=True)
     return {"q": q, "pipeline": r, "baseline": {"text": b, "metrics": b_m}}
 
 
-with ThreadPoolExecutor(max_workers=4) as ex:
-    results = list(ex.map(run_one, QUESTIONS))
+print(f"running {LIMIT} questions …", flush=True)
+results = []
+with ThreadPoolExecutor(max_workers=3) as ex:
+    futs = [ex.submit(run_one, q) for q in QUESTIONS[:LIMIT]]
+    for f in as_completed(futs):
+        results.append(f.result())
+        (OUT / "runs_partial.json").write_text(json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8")
+results.sort(key=lambda r: QUESTIONS.index(r["q"]))
 
 (OUT / "runs_v1.json").write_text(json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8")
 
@@ -124,7 +147,7 @@ def judge_one(r):
     return {"q": r["q"], "j0": j0, "j1": j1}
 
 
-with ThreadPoolExecutor(max_workers=4) as ex:
+with ThreadPoolExecutor(max_workers=3) as ex:
     verdicts = list(ex.map(judge_one, results))
 
 win = sum(1 for v in verdicts if v["j0"]["winner"] == v["j1"]["winner"] == "pipeline")

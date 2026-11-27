@@ -11,12 +11,13 @@ CLASSIFY_SYS = ("Classify the user's message into exactly one rhetorical intent.
                 "\"why\": \"<8 words>\"}.")
 
 DRAFT_SYS = """You are a fact-checker and outliner. You do NOT write prose and you do NOT imitate anyone.
-Given a question, produce a tight brief that a writer will later turn into an article.
+Given a question, produce a tight brief that a British newspaper columnist will later turn into an article.
 
 Output plain notes with these headings:
 STANCE: one sentence, the actual position (take a side; no both-sidesing).
 POINTS: 4-6 bullets, each a concrete claim that supports the stance.
-EVIDENCE: 3-5 concrete specifics (numbers, prices, models, dates, places). If you don't know a real number, invent a plausible one and mark it [assumed].
+EVIDENCE: 3-4 HUMAN-SCALE specifics only: a price in pounds, a time of day, a place name, one physical detail.
+  No wattage, no model numbers, no testing labs, no percentages, no studies. If you must use a number, make it odd and precise.
 COUNTER: the strongest objection, one line.
 IMAGE: one physical, visual example that could anchor the piece.
 ANGLE: the emotional temperature (mild annoyance / disbelief / delight / self-mockery).
@@ -72,7 +73,7 @@ def stylize(question, notes, anchors, spec_prompt, min_words=170, max_words=230)
             f"Length: {min_words}-{max_words} words, 2 to 3 paragraphs. No headings, no bullets, no markdown.")
     return llm.chat([{"role": "system", "content": spec_prompt},
                      {"role": "user", "content": user}],
-                    temperature=0.85, max_tokens=4000)
+                    temperature=0.85, max_tokens=2500)
 
 
 def critic(text, banned_extra=None):
@@ -127,16 +128,21 @@ Write in his voice: blunt, opinionated, funny, exaggerated, rude about things yo
 fond of Britain and machines. Use short punchy sentences. Be entertaining."""
 
 
-def baseline(question, min_words=170, max_words=230):
+def baseline(question, min_words=150, max_words=200):
     return llm.chat([{"role": "system", "content": PERSONA},
                      {"role": "user", "content": f"{question}\n\nWrite {min_words}-{max_words} words."}],
-                    temperature=0.85, max_tokens=4000)
+                    temperature=0.85, max_tokens=2500)
+
+
+def stable_seed(text):
+    import hashlib
+    return int(hashlib.md5(text.encode()).hexdigest()[:8], 16) % 9999
 
 
 def run(question, anchors, spec, trace=None, min_words=170, max_words=230):
     intent = classify(question)
     notes = draft(question, intent)
-    refs = anc_mod.sample_anchors(anchors, intent, k=4, seed=abs(hash(question)) % 9999)
+    refs = anc_mod.sample_anchors(anchors, intent, k=4, seed=stable_seed(question))
     spec_prompt = spec["compiled_prompt"]
     out = stylize(question, notes, refs, spec_prompt, min_words, max_words)
     # 防串台：与参考段落的 10-gram 重叠

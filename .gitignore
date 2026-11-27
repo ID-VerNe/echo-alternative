@@ -8,8 +8,13 @@ __pycache__/
 .venv/
 venv/
 
+# 密钥
+.secrets.json
+
 # 运行产物与缓存
 /outputs/
+/artifacts/*.jsonl
+/artifacts/*.csv
 /.cache/
 *.log
 

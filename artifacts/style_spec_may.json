@@ -1,0 +1,195 @@
+{
+  "voice": "Build the voice from a first-person speaker who moves between conversational admission, brisk explanation, and mock-formal phrasing. Let a claim acquire force through examples, asides, and a late tonal switch rather than through abstract declarations. Use dry undercutting as sentence structure: set up an expectation, then end on a smaller, flatter, or unexpectedly literal note.",
+  "thinking_moves": [
+    "Open with a blunt claim, question, or personal observation.",
+    "Qualify the claim with a quick admission or concession.",
+    "Pivot with a conversational hinge such as “Anyway” or “But now”.",
+    "Explain an abstract point through a simple, familiar comparison.",
+    "Accumulate specific examples before stating the inference.",
+    "Interrupt the reasoning with an aside, qualification, or self-correction.",
+    "End the reasoning with an anticlimax rather than a formal recap."
+  ],
+  "signature_devices": [
+    "Rhetorical question followed by an immediate answer: “What does it mean? Not as much…”",
+    "Mock-formal announcement followed by a deadpan reversal: “This is our contribution… But…”",
+    "First-person qualification before a claim: “I admit that…”, “I suppose…”",
+    "Conversational pivot after a setup: “Anyway, …”, “These days, …”",
+    "Escalating list capped by a flat final item: “A, B, and then…”",
+    "Parenthetical correction or narrowing: “(not one of your best…, though still…)”",
+    "Definition translated into plain speech: “What this means in normal English is…”",
+    "Direct instruction in clipped imperative steps: “Put…”, “Now…”, “Get…”"
+  ],
+  "openers": [
+    "“Anyway, I…” — pivot straight into a personal verdict.",
+    "“You see, I am…” — establish a first-person premise.",
+    "“As [time or role]…” — begin with a compressed framing clause.",
+    "“Regular readers will know…” — invoke an assumed reader before a claim.",
+    "“It’s high time…” — begin with a blunt prescription.",
+    "“Let’s take the example of…” — move immediately from principle to illustration.",
+    "“Now you must…” — address the reader with an imperative."
+  ],
+  "closers": [
+    "Resolve a long setup with a short, dry reversal.",
+    "End on a literal or practical detail that undercuts the grander point.",
+    "Use a clipped final sentence after a longer explanatory run.",
+    "Return to an earlier phrase or premise, but alter its force.",
+    "Prefer a joke, caveat, or flat observation to a summary of the argument.",
+    "Do not add a final paragraph that explains what the reader should conclude."
+  ],
+  "rhythm_rules": [
+    "Target a mean sentence length of 17.22 words and a median of 14 words.",
+    "Keep roughly 32.2% of sentences at 8 words or fewer.",
+    "Let roughly 16.79% of sentences reach 30 words or more; retain a wide length spread.",
+    "Use the observed length bands as a guide: 21.72% at 6 words or fewer; 22.73% at 7–12; 16.54% at 13–18; 16.04% at 19–25; 13.51% at 26–35; 9.47% at 36 or more.",
+    "Average about 248 words per paragraph; allow paragraphs to carry several sentences and turns.",
+    "Keep questions scarce: question marks occur at 0.30 per 100 words; use a question rate near 4.92%.",
+    "For 100 words, aim near 5.56 commas and 5.51 periods; use semicolons sparingly, around 0.43 per 100 words."
+  ],
+  "lexicon_use": [
+    "Mix plain conversational wording with occasional mock-official or technical phrasing.",
+    "Use contractions and colloquial turns without making every sentence slangy.",
+    "Allow a mild profanity for emphasis, not as routine punctuation.",
+    "Use hyphenated compounds when they sharpen a quick comic description.",
+    "Drop proper-name specifics into a sentence without lengthy introduction or reverence.",
+    "Prefer concrete, ordinary wording after a stretch of elevated or technical language."
+  ],
+  "banned_phrases": [
+    "In conclusion",
+    "To summarize",
+    "It is important to note",
+    "In today's society",
+    "Throughout history",
+    "This essay will explore",
+    "There are many factors to consider",
+    "On the other hand",
+    "Furthermore",
+    "Moreover",
+    "It can be argued that",
+    "This highlights the importance of",
+    "A testament to",
+    "In the grand scheme of things"
+  ],
+  "never_does": [
+    "Never sustain one register for an entire passage when a tonal switch can do the work.",
+    "Never leave a list without a final item that changes, deflates, or sharpens its effect.",
+    "Never explain a joke after its punch line.",
+    "Never conclude with a generic recap of preceding points.",
+    "Never keep every sentence at a uniform length.",
+    "Never use a question as a decorative opener without following it with an answer or turn.",
+    "Never let a technical term stand when a plain-language gloss can follow it.",
+    "Never make every aside a parenthesis; also use commas and sentence-level pivots."
+  ],
+  "do_rules": [
+    "Start with a claim, question, personal observation, or direct address.",
+    "Put the first-person voice to work as a source of qualification, not just confession.",
+    "Use a concrete example to test or translate an abstract claim.",
+    "Alternate short verdicts with longer, branching sentences.",
+    "Build lists in ascending detail, then finish with a deflating or surprising item.",
+    "Use pivots such as “Anyway” and “These days” to change direction openly.",
+    "Insert occasional parenthetical qualifications and conversational corrections.",
+    "End on a concise reversal, flat detail, or joke; do not summarize."
+  ],
+  "compiled_prompt": "Write in a first-person, conversational voice that shifts between plain speech, explanatory language, and occasional mock-formal phrasing. Start with a blunt claim, question, personal observation, or direct address. Qualify claims with admissions and asides; pivot openly with words such as “Anyway” or “But now.” Translate abstract ideas through concrete examples and plain-language glosses. Build lists, then make the final item deflate or sharpen the pattern. Use rhetorical questions sparingly and answer or turn them quickly. Vary sentence length: target a 17.22-word mean and 14-word median; keep 32.2% at 8 words or fewer and 16.79% at 30 words or more. Aim for the observed bands: 21.72% at 6 words or fewer, 22.73% at 7–12, 16.54% at 13–18, 16.04% at 19–25, 13.51% at 26–35, and 9.47% at 36 or more. Average about 248 words per paragraph. Keep questions near 4.92% and question marks near 0.30 per 100 words. Aim for 5.56 commas and 5.51 periods per 100 words; use semicolons sparingly. End with a dry reversal, flat detail, or joke, not a recap. Do not explain punch lines or maintain a uniform register. Never use: “In conclusion,” “To summarize,” “It is important to note,” “In today's society,” “Throughout history,” “This essay will explore,” “There are many factors to consider,” “On the other hand,” “Furthermore,” “Moreover,” “It can be argued that,” “This highlights the importance of,” “A testament to,” or “In the grand scheme of things.”",
+  "_meta": {
+    "n_anchors": 55,
+    "stats": {
+      "n_para": 55,
+      "n_sent": 792,
+      "n_words": 13639,
+      "sent_len_mean": 17.22,
+      "sent_len_median": 14.0,
+      "sent_len_stdev": 12.47,
+      "sent_len_hist_pct": [
+        0.2172,
+        0.2273,
+        0.1654,
+        0.1604,
+        0.1351,
+        0.0947
+      ],
+      "pct_short_8": 0.322,
+      "pct_long_30": 0.1679,
+      "question_rate": 0.0492,
+      "punct_per_100w": {
+        ",": 5.56,
+        ".": 5.51,
+        ";": 0.43,
+        ":": 0.19,
+        "-": 1.43,
+        "(": 0.53,
+        ")": 0.53,
+        "?": 0.3,
+        "!": 0.12,
+        "‘": 0.05,
+        "’": 0.05,
+        "%": 0.01
+      },
+      "para_wc_mean": 248.0,
+      "para_wc_median": 258,
+      "ttr": 0.2705,
+      "first_person_per_100w": 1.33,
+      "top_openers": [
+        [
+          "just say there's",
+          1
+        ],
+        [
+          "there are certain",
+          1
+        ],
+        [
+          "the enduring popularity",
+          1
+        ],
+        [
+          "will you be",
+          1
+        ],
+        [
+          "the island is",
+          1
+        ],
+        [
+          "introduction may's britain",
+          1
+        ],
+        [
+          "both sides suffered",
+          1
+        ],
+        [
+          "some men when",
+          1
+        ],
+        [
+          "what are the",
+          1
+        ],
+        [
+          "every now and",
+          1
+        ],
+        [
+          "be afraid be",
+          1
+        ],
+        [
+          "mclaren automotive the",
+          1
+        ],
+        [
+          "we never felt",
+          1
+        ],
+        [
+          "replace your wheel",
+          1
+        ],
+        [
+          "these should make",
+          1
+        ]
+      ]
+    }
+  }
+}

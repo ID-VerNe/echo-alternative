@@ -16,10 +16,12 @@
       pipeline/spec.py     LLM 归纳 + 硬统计注入 → style_spec.json（含 compiled_prompt）
       pipeline/stats.py    句长/标点/词汇多样性（纯代码计算）
 
-在线  pipeline/generate.py  意图分类 → 事实清单（不成句）→ 风格转译 → 规则质检/重写
+在线  pipeline/generate.py  意图分类 → 事实清单（不成句）→ 3 候选风格转译 → rubric rerank → 规则质检
       pipeline/metrics.py   Cosine Delta、句长 JS、标点余弦、n-gram 重叠、事实保留
       pipeline/stylevec.py  内容无关风格向量（虚词 n-gram + 句长转移 + 标点 + 句首词）
 ```
+
+实验结果与结论见 [`docs/REPORT.md`](docs/REPORT.md)。
 
 ## 目录约定
 

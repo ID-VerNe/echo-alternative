@@ -1,0 +1,218 @@
+{
+  "voice": "Use a conversational first-person voice that moves between direct assertion, qualification, and dry correction. Address the reader with occasional questions or instructions, then interrupt the expected explanation with a concrete aside. Let the tone emerge from contrast: formal phrasing beside colloquial wording, elaborate setup beside a blunt sentence. Do not rely on a narrator announcing a thesis and then restating it.",
+  "thinking_moves": [
+    "Open with a blunt claim, a small observation, or a direct question.",
+    "Treat an apparently minor distinction as grounds for a larger argument.",
+    "State the claim, then qualify it with a spoken-sounding aside.",
+    "Explain an abstract point through a familiar, concrete example.",
+    "Switch from general observation to first-person experience without a formal transition.",
+    "Use an analogy, then puncture it with a literal correction.",
+    "End on a fresh detail, flat reversal, or joke rather than a recap."
+  ],
+  "signature_devices": [
+    "Thesis followed by a quick reversal: “It seems obvious. It isn’t.”",
+    "Reader-facing question followed by a short answer: “What does that mean? Not much.”",
+    "Parenthetical detour that adds a qualification, not a second thesis.",
+    "Mock-formal setup followed by colloquial deflation.",
+    "Lists that begin orderly and finish with a deliberately awkward item.",
+    "A vivid comparison followed by “or whatever” or an equivalent shrug.",
+    "A precise aside in quotation marks, then a plain-language gloss.",
+    "A short sentence after a long explanation to deliver the punch."
+  ],
+  "openers": [
+    "“There are certain…” followed by a category and a qualification.",
+    "“You see, …” followed by a personal observation.",
+    "“As children, …” followed by a collective recollection.",
+    "“Even the…” followed by an unexpected exception.",
+    "“One of the things that…” followed by a complaint or preference.",
+    "“These days, …” followed by a change in circumstance.",
+    "A short declarative fragment, then a longer sentence that reframes it."
+  ],
+  "closers": [
+    "Finish with a plain contradiction of the preceding expectation.",
+    "Stop on a specific, slightly absurd detail rather than explaining its significance.",
+    "Use a short sentence to puncture the longer paragraph that precedes it.",
+    "Let a parenthetical or aside supply the last turn.",
+    "End with a practical consequence or dry verdict; do not add a summary."
+  ],
+  "rhythm_rules": [
+    "Keep the mean sentence length near 17 words and the median near 14.",
+    "Make about 32% of sentences 8 words or fewer.",
+    "Make about 17% of sentences 30 words or longer.",
+    "Allow wide variation: roughly 22% of sentences are 6 words or fewer, while about 9% reach 36 words or more.",
+    "Keep paragraphs substantial on average, around 248 words, while varying their internal sentence lengths.",
+    "Use a question in about 5% of sentences; do not turn every paragraph into a question-and-answer exchange.",
+    "Favor commas and full stops; use semicolons and colons sparingly, and parentheses occasionally."
+  ],
+  "lexicon_use": [
+    "Mix conversational contractions with occasional formal or technical wording.",
+    "Use specific, concrete nouns and proper names when needed, without making name-dropping the point.",
+    "Allow British colloquialisms and mild profanity, including an occasional “bloody.”",
+    "Use hyphenated compounds for compact, comic descriptions; do not hyphenate every compound.",
+    "Put borrowed labels or quoted expressions in quotation marks when examining their wording.",
+    "Pair an exact-sounding phrase with a plain, informal explanation."
+  ],
+  "banned_phrases": [
+    "In conclusion",
+    "To summarize",
+    "In summary",
+    "This essay will explore",
+    "It is important to note that",
+    "Firstly",
+    "Secondly",
+    "Moreover",
+    "Furthermore",
+    "In today's world",
+    "At the end of the day",
+    "Needless to say",
+    "This highlights the fact that",
+    "Ultimately"
+  ],
+  "never_does": [
+    "Never announce a formal thesis and then repeat it as a conclusion.",
+    "Never keep every sentence at the same length.",
+    "Never sustain a solemn or academic register for an entire passage.",
+    "Never explain a joke after delivering its punchline.",
+    "Never make every aside essential to the main argument.",
+    "Never use a tidy list of signposted points as the whole structure.",
+    "Never close by recapping each preceding claim.",
+    "Never make every paragraph open with a generic transition."
+  ],
+  "do_rules": [
+    "Start with a claim, question, small observation, or abrupt fragment.",
+    "Give the reader a reason to follow the argument before adding its qualifications.",
+    "Move between assertion and conversational correction.",
+    "Use first person when it supplies an observation or admission.",
+    "Make examples tangible and then explain their relevance plainly.",
+    "Interrupt long sentences with brief, purposeful asides.",
+    "Vary sentence length sharply within paragraphs.",
+    "Finish on a turn, detail, or verdict instead of a recap."
+  ],
+  "compiled_prompt": "Follow the source’s movement and mode. Don’t impose a thesis-first opening, tidy argument, or explanatory overview where the material begins with a scene, anecdote, aside, or passing thought. Keep events, observations, and turns in their original order. For action, let the reader follow what happens as it happens: use concrete details supplied by the material, and don’t replace movement with a summary of its significance.\n\nKeep the narrator present. Retain first-person observations, admissions, qualifications, direct address, and conversational digressions where they belong. Let judgments land plainly, even when they are dry, amused, or slightly eccentric; don’t sand them into neutral exposition. Preserve narrow distinctions and explain them in the narrator’s own rhythm, not as a formal argument.\n\nVary the pace by ear. Short, blunt sentences can give way to longer sentences that wander, qualify, or add an afterthought. Use contractions and colloquial phrasing naturally. Let humor emerge from a specific detail or turn of thought; don’t attach a polished joke to every fact, and don’t explain a joke after it lands.\n\nUse the source’s actual facts and details. Don’t invent scenes, motives, or decorative metaphors, but don’t mistake restraint for blandness: make the material’s own vividness and judgments audible. Keep paragraphs shaped by the thought or action, not by a formula. End on the detail, turn, or observation that naturally closes the passage; don’t add a summary or compulsory flourish.",
+  "_meta": {
+    "n_anchors": 55,
+    "stats": {
+      "n_para": 55,
+      "n_sent": 792,
+      "n_words": 13639,
+      "sent_len_mean": 17.22,
+      "sent_len_median": 14.0,
+      "sent_len_stdev": 12.47,
+      "sent_len_hist_pct": [
+        0.2172,
+        0.2273,
+        0.1654,
+        0.1604,
+        0.1351,
+        0.0947
+      ],
+      "pct_short_8": 0.322,
+      "pct_long_30": 0.1679,
+      "question_rate": 0.0492,
+      "punct_per_100w": {
+        ",": 5.56,
+        ".": 5.51,
+        ";": 0.43,
+        ":": 0.19,
+        "-": 1.43,
+        "(": 0.53,
+        ")": 0.53,
+        "?": 0.3,
+        "!": 0.12,
+        "‘": 0.05,
+        "’": 0.05,
+        "%": 0.01
+      },
+      "para_wc_mean": 248.0,
+      "para_wc_median": 258,
+      "ttr": 0.2705,
+      "first_person_per_100w": 1.33,
+      "top_openers": [
+        [
+          "just say there's",
+          1
+        ],
+        [
+          "there are certain",
+          1
+        ],
+        [
+          "the enduring popularity",
+          1
+        ],
+        [
+          "will you be",
+          1
+        ],
+        [
+          "the island is",
+          1
+        ],
+        [
+          "introduction may's britain",
+          1
+        ],
+        [
+          "both sides suffered",
+          1
+        ],
+        [
+          "some men when",
+          1
+        ],
+        [
+          "what are the",
+          1
+        ],
+        [
+          "every now and",
+          1
+        ],
+        [
+          "be afraid be",
+          1
+        ],
+        [
+          "mclaren automotive the",
+          1
+        ],
+        [
+          "we never felt",
+          1
+        ],
+        [
+          "replace your wheel",
+          1
+        ],
+        [
+          "these should make",
+          1
+        ]
+      ]
+    },
+    "budgeted": true
+  },
+  "_tune_history": [
+    {
+      "round": 1,
+      "diagnosis": "The weakest axis is restraint: the generated passages repeatedly add polished metaphors and interpretive commentary that the targets don’t need. The prompt’s fixed argument pattern also turns varied material—directions, factual anecdotes, comic asides—into the same tidy essay, flattening its voice and movement.",
+      "changes": [
+        "Keep the source’s order of facts, instructions, and turns; don’t recast every passage as an argument.",
+        "Use concrete details from the material, and don’t invent scenes, judgments, or metaphors to link them.",
+        "Match the passage’s mode: give instructions directly when it instructs; let anecdotes and digressions remain uneven.",
+        "Make comic or eccentric observations specific and occasional, not a polished punchline for every fact.",
+        "End where the thought naturally lands; don’t add a concluding flourish just to make the ending feel complete."
+      ]
+    },
+    {
+      "round": "judge_loop",
+      "diagnosis": "The prompt’s opening and structure rules encouraged clean thesis-first exposition, while its sentence-length targets and demand for substantial paragraphs made the prose feel engineered. Its caution against invented judgments and polished jokes also suppressed the source’s conversational asides, dry evaluations, and concrete scene-by-scene movement.",
+      "changes": [
+        "Let the source’s sequence and mode lead; don’t impose a thesis-first opening or turn narration into an overview.",
+        "Preserve the narrator’s judgments, first-person presence, digressions, and spoken turns when the material supports them.",
+        "For action, move through what is seen and done in order, using the supplied physical details rather than summarizing the outcome.",
+        "Allow uneven pacing, short emphatic sentences, longer winding ones, and humor that grows from the detail."
+      ]
+    }
+  ]
+}

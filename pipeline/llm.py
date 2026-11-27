@@ -66,4 +66,9 @@ def parse_json(text):
     end = t.rfind("}")
     if start == -1 or end == -1:
         raise ValueError("no json object found")
-    return json.loads(t[start:end + 1])
+    blob = t[start:end + 1]
+    try:
+        return json.loads(blob)
+    except json.JSONDecodeError:
+        # 模型偶尔在字符串里塞裸换行/制表符，strict=False 容忍控制字符
+        return json.loads(blob, strict=False)

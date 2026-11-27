@@ -89,7 +89,35 @@
 
 自动编译暴露的通用缺陷（已修成代码，见 `experiments/e15_compile.py`）：归纳会把直方图百分比原样抄进 prompt（"17.22 词""32.2% ≤8 词""9.47% ≥36 词"），模型于是去凑数字。给编译器的固定预算约束是"200–260 词、最多三个数字、不许抄百分比表"。但这只治了形式，没治"空"——真正的修法是把人的诊断做成搜索循环：**归纳 spec → 用 rubric 在留出段落上打分 → 让模型针对失分轴改写 spec → 再评**，直到留出集不再涨。这是下一步要做的实验。
 
-## 八、可复现命令
+## 八、把"人的诊断"交给 agent（E16–E18）
+
+目标：不需要我在旁边看输出、写规则，让 agent 自己读语料、自己诊断、自己改资产。
+
+协议（全程无人工）：段落级留出 20%（hash 分桶），锚点与 spec 只用训练桶；每条留出段落先用"事实提取器"压成中性 brief（只留立场、论点、具体细节），再用当前 spec 重写成段，用五轴 rubric 对照原段落打分；agent 读最差 4 条 + 各轴得分，输出新的 compiled_prompt；复评，保留历史最优。
+
+留出均分曲线：**23.3 → 23.9 → 22.8**。第 2 轮退步——它把"照抄原段落的结构和顺序"写成了规则，节奏被带偏。这一轮暴露了循环设计的两个必备件：保留最优、早停。
+
+第 1 轮诊断原文（这条意见本身很值钱）：
+
+> The weakest axis is restraint: the generated passages repeatedly add polished metaphors and interpretive commentary that the targets don't need. The prompt's fixed argument pattern also turns varied material — directions, factual anecdotes, comic asides — into the same tidy essay, flattening its voice and movement.
+
+但盲评不认。在没参与过调优的 10 条留出段落上：**调优版 0 胜 / 未调优 5 胜 / 5 分歧**。rubric 涨了，人味掉了——和第七节、和 v1→v4 的教训一模一样：**可数的轴会把人往"忠实复述"拉，而裁判看重的是节奏、俏皮、自嘲。**
+
+于是做第二轮，把裁判判词直接喂给 agent："你的 rubric 涨了、裁判更不喜欢了，找原因。"它的诊断更尖锐：
+
+> The prompt's opening and structure rules encouraged clean thesis-first exposition, while its sentence-length targets and demand for substantial paragraphs made the prose feel engineered. Its caution against invented judgments and polished jokes suppressed the source's conversational asides, dry evaluations, and concrete scene-by-scene movement.
+
+改完在另一批 10 条留出段落上验收：**2 胜 / 2 负 / 6 分歧**——从"明显更差"回到"打平"（注意 A 位胜率 8/10，位置偏差依旧，严格一致的样本只有 4 条）。
+
+三条结论：
+
+1. **装置可用**：agent 能读、能诊断、能改，诊断质量接近人类编辑，而且改的是机制（开头怎么起、论点怎么转、结尾落在哪），不是往 prompt 里堆形容词。
+2. **一轮改写不足以翻盘**：21 万词语料、每轮 10 条留出，信噪比太低；rubric 目标还会主动误导。同样的循环换到克拉克森身上之所以 6:1:5，是因为语料大 9 倍、且有人做了两轮针对性修订。
+3. **正确的循环长这样**：judge-in-the-loop（用盲评胜率当奖励，而不是五轴分）+ best-of-N spec 搜索（一次生成 5–8 个变体，而不是改一次）+ 30–50 条留出样本。这三件加起来，才是"agent 自己把资产调到能打"的配置。
+
+关于"微调 LM"：现在做到的是 **prompt 级蒸馏**（把书的规则压进 compiled_prompt 与锚点库）。真正的权重微调（LoRA / DPO）需要训练侧，这个推理接口做不到；但上面的循环可以把胜/负样本对攒下来，正是将来做 DPO 的训练集。
+
+## 九、可复现命令
 
 ```powershell
 python experiments/e01_audit.py      # 语料体检 + 清洗落盘
@@ -102,4 +130,7 @@ python experiments/e12_summary.py    # 汇总表
 python experiments/e14_may.py        # May 迁移性检验（自动编译）
 python experiments/e15_compile.py    # 带预算约束重编 May spec
 python experiments/e14_may.py style_spec_may_v2   # May 预算版重跑
+python experiments/e16_agent_tune.py style_spec_may_v2 style_spec_may_tuned 1 10   # agent 自动调优
+python experiments/e16b_holdout_compare.py         # 段落级盲评验收
+python experiments/e18_judge_loop.py               # 裁判判词回流后再验收
 ```

@@ -1,0 +1,783 @@
+[
+  {
+    "q": "Is it worth buying an air fryer?",
+    "final": "I'd say yes, but only if you already own a saucepan that hates you. Mine sits on the worktop in a kitchen in a £680,000 terraced house in Croydon, and it has done almost nothing worth mentioning since last March.\n\nIt crisps chips, I'll grant you that. Put in a handful of parsnip chips at 8 in the morning and out they come looking like the offcuts from a church roof. You can cook a chicken breast in it, though it arrives brown outside and pale in the middle, as apologetic as a schoolboy who's forgotten his kit. But then what? You load the basket, you wait, you lean over the top and the hot air buffets your fringe like a blacksmith's bellows. The drawer sticks when it's hot, so you prise it out with a tea towel that smells of old washing-up water.\n\nAnd the noise. It runs at a pitch that would wake a farm dog from a field three hedgerows off. You are promised less oil and a healthier dinner, though none of it makes you a new person by Friday. The thing takes up the space of a bread bin. It gives back less than a toaster. I still plug it in from time to time just to see what it does. It holds my cookery books shut.",
+    "rounds": [
+      {
+        "n": 1,
+        "text": "I'd say yes, but only if you already own a saucepan that hates you. Mine sits on the worktop in a kitchen in a £680 terraced house in Croydon, and it has done almost nothing worth mentioning since last March.\n\nIt crisps chips, I'll grant you that. Put in a handful of parsnip chips at 8 in the morning and out they come looking like the offcuts from a church roof. You can cook a chicken breast in it, though the result arrives brown on the outside and as apologetic as a schoolboy who's forgotten his kit. But then what? You load the basket, you wait, you lean over the top and the hot air buffets your fringe like a blacksmith's bellows. It sheds enough grease to feed a budget sparrow through winter, and the drawer sticks when it's hot, which means you prise it out with a tea towel that comes away smelling of the inside of a caravan.\n\nAnd the noise. It runs at a pitch that would wake a farm dog from a field three hedgerows off. You are told it uses less oil, that it is healthier, that you will be a new person by Friday. Meanwhile the thing takes up the space of a bread bin and gives back less than a toaster. I still use mine, though. It holds my cookery books shut.",
+        "violations": [],
+        "fixes": []
+      },
+      {
+        "n": 2,
+        "text": "I'd say yes, but only if you already own a saucepan that hates you. Mine sits on the worktop in a kitchen in a £680 terraced house in Croydon, and it has done almost nothing worth mentioning since last March.\n\nIt crisps chips, I'll grant you that. Put in a handful of parsnip chips at 8 in the morning and out they come looking like the offcuts from a church roof. You can cook a chicken breast in it, though the result arrives brown on the outside and as apologetic as a schoolboy who's forgotten his kit. But then what? You load the basket, you wait, you lean over the top and the hot air buffets your fringe like a blacksmith's bellows. It sheds enough grease to feed a budget sparrow through winter, and the drawer sticks when it's hot, which means you prise it out with a tea towel that comes away smelling of the inside of a caravan.\n\nAnd the noise. It runs at a pitch that would wake a farm dog from a field three hedgerows off. You are told it uses less oil, that it is healthier, that you will be a new person by Friday. Meanwhile the thing takes up the space of a bread bin and gives back less than a toaster. I still use mine, though. It holds my cookery books shut.",
+        "violations": [
+          "节奏（rhythm_rules: never three consecutive sentences within 3 words of each other）：第10句 'It runs at a pitch that would wake a farm dog from a field three hedgerows off.'（17词）、第11句 'You are told it uses less oil, that it is healthier, that you will be a new person by Friday.'（20词）、第12句 'Meanwhile the thing takes up the space of a bread bin and gives back less than a toaster.'（18词）三句两两差≤3，连续近长。",
+          "装置超限（do_rules: never three signature devices in one paragraph）：第二段堆了四个比喻，'looking like the offcuts from a church roof'、'as apologetic as a schoolboy who's forgotten his kit'、'like a blacksmith's bellows'、'smelling of the inside of a caravan'，另有 'feed a budget sparrow through winter' 意象，超过每段三个装置上限。",
+          "句长中位数 17（rhythm_rules 目标中位数 14）；第8句 'It sheds enough grease to feed a budget sparrow through winter, and the drawer sticks when it's hot, which means you prise it out with a tea towel that comes away smelling of the inside of a caravan.' 38词，一个从句塞两个意象。",
+          "冗余：第5句 'the result arrives brown on the outside' 与第3句 'It crisps chips' 的 outside 概念重复。"
+        ],
+        "fixes": []
+      },
+      {
+        "n": 3,
+        "text": "I'd say yes, but only if you already own a saucepan that hates you. Mine sits on the worktop in a kitchen in a £680 terraced house in Croydon, and it has done almost nothing worth mentioning since last March.\n\nIt crisps chips, I'll grant you that. Put in a handful of parsnip chips at 8 in the morning and out they come looking like the offcuts from a church roof. You can cook a chicken breast in it, though it arrives brown outside and pale in the middle, as apologetic as a schoolboy who's forgotten his kit. But then what? You load the basket, you wait, you lean over the top and the hot air buffets your fringe like a blacksmith's bellows. The drawer sticks when it's hot, so you prise it out with a tea towel that comes away smelling of the inside of a caravan.\n\nAnd the noise. It runs at a pitch that would wake a farm dog from a field three hedgerows off. You are told it uses less oil, that it is healthier, that you will be a new person by Friday. The thing takes up the space of a bread bin. It gives back less than a toaster. I still plug it in from time to time. It holds my cookery books shut.",
+        "violations": [
+          "残留连续近长：第13句 'It gives back less than a toaster.'（7词）、第14句 'I still plug it in from time to time.'（9词）、第15句 'It holds my cookery books shut.'（6词）两两差≤3，仍违反节奏规则。",
+          "第二段比喻仍为四个：church roof、schoolboy、bellows、caravan，装置未降到三个以内。",
+          "实测 wordcount=220，中位数 14，≤8词句 5/15，≤4词句 2，问句 1；其余硬指标通过。"
+        ],
+        "fixes": [
+          "原句 'It sheds enough grease to feed a budget sparrow through winter, and the drawer sticks when it's hot, which means you prise it out with a tea towel that comes away smelling of the inside of a caravan.' → 改为 'The drawer sticks when it's hot, so you prise it out with a tea towel that comes away smelling of the inside of a caravan.'，删掉麻雀意象并把38词长句拆短。",
+          "原句 'Meanwhile the thing takes up the space of a bread bin and gives back less than a toaster.' → 拆为 'The thing takes up the space of a bread bin.' 与 'It gives back less than a toaster.' 两句。",
+          "原句 'I still use mine, though.' → 改为 'I still plug it in from time to time.'"
+        ]
+      },
+      {
+        "n": 4,
+        "text": "I'd say yes, but only if you already own a saucepan that hates you. Mine sits on the worktop in a kitchen in a £680 terraced house in Croydon, and it has done almost nothing worth mentioning since last March.\n\nIt crisps chips, I'll grant you that. Put in a handful of parsnip chips at 8 in the morning and out they come looking like the offcuts from a church roof. You can cook a chicken breast in it, though it arrives brown outside and pale in the middle, as apologetic as a schoolboy who's forgotten his kit. But then what? You load the basket, you wait, you lean over the top and the hot air buffets your fringe like a blacksmith's bellows. The drawer sticks when it's hot, so you prise it out with a tea towel that smells of old washing-up water.\n\nAnd the noise. It runs at a pitch that would wake a farm dog from a field three hedgerows off. You are told it uses less oil, that it is healthier, that you will be a new person by Friday. The thing takes up the space of a bread bin. It gives back less than a toaster. I still plug it in from time to time just to see what it does. It holds my cookery books shut.",
+        "violations": [
+          "残留：第二段 caravan 比喻 'smelling of the inside of a caravan' 仍在，装置数 4，需再减一个。",
+          "结尾三句 7/9/6 仍偏近，第14句需加长以拉开差距。",
+          "复测 wordcount=222，中位数 15，≤8词句 5/15=33%，≤4词句 2，问句 1，无禁用标点；硬指标通过。"
+        ],
+        "fixes": [
+          "原片段 'that comes away smelling of the inside of a caravan' → 改为 'that smells of old washing-up water'，caravan 比喻换成平实物理细节。",
+          "原句 'I still plug it in from time to time.' → 改为 'I still plug it in from time to time just to see what it does.'，9词拉到15词，打破连续近长。"
+        ]
+      },
+      {
+        "n": 5,
+        "text": "I'd say yes, but only if you already own a saucepan that hates you. Mine sits on the worktop in a kitchen in a £680,000 terraced house in Croydon, and it has done almost nothing worth mentioning since last March.\n\nIt crisps chips, I'll grant you that. Put in a handful of parsnip chips at 8 in the morning and out they come looking like the offcuts from a church roof. You can cook a chicken breast in it, though it arrives brown outside and pale in the middle, as apologetic as a schoolboy who's forgotten his kit. But then what? You load the basket, you wait, you lean over the top and the hot air buffets your fringe like a blacksmith's bellows. The drawer sticks when it's hot, so you prise it out with a tea towel that smells of old washing-up water.\n\nAnd the noise. It runs at a pitch that would wake a farm dog from a field three hedgerows off. You are promised less oil and a healthier dinner, though none of it makes you a new person by Friday. The thing takes up the space of a bread bin. It gives back less than a toaster. I still plug it in from time to time just to see what it does. It holds my cookery books shut.",
+        "violations": [
+          "价格可读性（do_rules: two or three human-scale specifics, prices in pounds）：第1段第2句 'Mine sits on the worktop in a kitchen in a £680 terraced house in Croydon'，£680 缺三个零，读起来像 £680,000 漏零的笔误，而不是荒诞玩笑。",
+          "装置挤堆（do_rules: never three devices in one paragraph; never the same device twice）：第3段尾 'It runs at a pitch that would wake a farm dog from a field three hedgerows off.'（动物/拟声比喻）与紧随的 'You are told it uses less oil, that it is healthier, that you will be a new person by Friday.'（三段清单式转述）两个装置相邻；该清单与第2段 'You load the basket, you wait, you lean over the top' 的动词三叠构成同类重复风险，清单转述需降为平实物理细节。"
+        ],
+        "fixes": [
+          "原片段 'a £680 terraced house in Croydon' → 改为 'a £680,000 terraced house in Croydon'，补全为人尺度真实房价，荒诞感留给后文教区屋顶与铁匠风箱。",
+          "原句 'You are told it uses less oil, that it is healthier, that you will be a new person by Friday.' → 改为 'You are promised less oil and a healthier dinner, though none of it makes you a new person by Friday.'，三段清单压成平实让步句，保留 'new person by Friday' 落点。",
+          "复测 wordcount=222，中位数句长 15，≤8词句 5/15，无连续近长句，无禁用标点与短语。"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "Should I get a robot vacuum cleaner?",
+    "final": "Don't buy one. The robot vacuum is a box of ambitions that has never met a cable it couldn't hate.\n\nYou picture it trundling round the hall at 9 in the morning on a Saturday, dusting the skirting boards while you drink coffee. In my house in Leeds it soon wedged itself tight behind the Welsh dresser. It started grinding away like a red-faced sergeant major barking drill commands into a dented metal dustbin by the gate. It ate a shoelace. It climbed onto a rug and stayed there, cornered, as though I had accused it of tax fraud. The map it draws of your home has more false turns than a lost postman on a suburban estate. The bin it empties into smells faintly of old tea bags and damp carpet.\n\nPeople say these machines free your evening. What they actually free is a small plastic circle. It cannot see a chair leg, a dropped sock or the trailing charging lead. You trail that lead across the floor of that £350,000 house. You end up kneeling beside it at half past seven, untangling its brushes from the wheels. It blinks at you like a misbehaving spaniel. Mine has been in the cupboard for a year. It still thinks it's cleaning.",
+    "rounds": [
+      {
+        "n": 1,
+        "text": "Don't buy one. The robot vacuum is a box of ambitions that has never met a cable it couldn't hate.\n\nYou picture it trundling round the hall at 9 in the morning on a Saturday, dusting the skirting boards while you drink coffee. In my house in Leeds it instead wedged itself behind the Welsh dresser and started making a noise like a vicar practising his sermon into a biscuit tin. It ate a shoelace. It climbed onto a rug and stayed there, cornered, as though I had accused it of tax fraud. The map it draws of your home has more false turns than a lost postman on a suburban estate, and it empties itself into a bin that smells of the back seat of a 1997 estate car.\n\nPeople say these machines free your evening. What they actually free is a small plastic circle that cannot see a chair leg, a dropped sock or the way you keep your charging lead trailing across the floor of a house you bought for £350,000. You end up kneeling beside it, untangling its brushes at half past seven, while it blinks at you like a misbehaving spaniel. Mine has been in the cupboard for a year. It still thinks it's cleaning.",
+        "violations": [],
+        "fixes": []
+      },
+      {
+        "n": 2,
+        "text": "Don't buy one. The robot vacuum is a box of ambitions that has never met a cable it couldn't hate.\n\nYou picture it trundling round the hall at 9 in the morning on a Saturday, dusting the skirting boards while you drink coffee. In my house in Leeds it instead wedged itself behind the Welsh dresser and started making a noise like a vicar practising his sermon into a biscuit tin. It ate a shoelace. It climbed onto a rug and stayed there, cornered, as though I had accused it of tax fraud. The map it draws of your home has more false turns than a lost postman on a suburban estate, and it empties itself into a bin that smells of the back seat of a 1997 estate car.\n\nPeople say these machines free your evening. What they actually free is a small plastic circle that cannot see a chair leg, a dropped sock or the way you keep your charging lead trailing across the floor of a house you bought for £350,000. You end up kneeling beside it, untangling its brushes at half past seven, while it blinks at you like a misbehaving spaniel. Mine has been in the cupboard for a year. It still thinks it's cleaning.",
+        "violations": [
+          "装置超限：第二段四个比喻，'noise like a vicar practising his sermon into a biscuit tin'、'as though I had accused it of tax fraud'、'more false turns than a lost postman on a suburban estate'、'smells of the back seat of a 1997 estate car'，超每段三个上限。",
+          "中位数 17（目标 14），长句偏多。",
+          "第9句 'What they actually free is a small plastic circle that cannot see a chair leg, a dropped sock or the way you keep your charging lead trailing across the floor of a house you bought for £350,000.' 37词，清单与价格从句挤在一句。",
+          "第7句 'The map it draws of your home has more false turns than a lost postman on a suburban estate, and it empties itself into a bin that smells of the back seat of a 1997 estate car.' 37词，两个独立意象用 and 并列在一句。"
+        ],
+        "fixes": []
+      },
+      {
+        "n": 3,
+        "text": "Don't buy one. The robot vacuum is a box of ambitions that has never met a cable it couldn't hate.\n\nYou picture it trundling round the hall at 9 in the morning on a Saturday, dusting the skirting boards while you drink coffee. In my house in Leeds it instead wedged itself behind the Welsh dresser and started making a noise like a vicar practising his sermon into a biscuit tin. It ate a shoelace. It climbed onto a rug and stayed there, cornered, as though I had accused it of tax fraud. The map it draws of your home has more false turns than a lost postman on a suburban estate, and the bin it empties into smells of old tea bags.\n\nPeople say these machines free your evening. What they actually free is a small plastic circle that cannot see a chair leg, a dropped sock or the charging lead you trail across the floor of a house bought for £350,000. You end up kneeling beside it, untangling its brushes at half past seven, while it blinks at you like a misbehaving spaniel. Mine has been in the cupboard for a year. It still thinks it's cleaning.",
+        "violations": [
+          "残留：中位数仍 17；第9句 33词仍超长。",
+          "第二段已降到三个比喻（vicar、tax fraud、postman），estate car 改为 'old tea bags' 平实细节；实测 wordcount=199。"
+        ],
+        "fixes": [
+          "原片段 'and it empties itself into a bin that smells of the back seat of a 1997 estate car.' → 改为 'and the bin it empties into smells of old tea bags.'",
+          "原片段 'or the way you keep your charging lead trailing across the floor of a house you bought for £350,000' → 改为 'or the charging lead you trail across the floor of a house bought for £350,000'."
+        ]
+      },
+      {
+        "n": 4,
+        "text": "Don't buy one. The robot vacuum is a box of ambitions that has never met a cable it couldn't hate.\n\nYou picture it trundling round the hall at 9 in the morning on a Saturday, dusting the skirting boards while you drink coffee. In my house in Leeds it instead wedged itself behind the Welsh dresser and started making a noise like a vicar practising his sermon into a biscuit tin. It ate a shoelace. It climbed onto a rug and stayed there, cornered, as though I had accused it of tax fraud. The map it draws of your home has more false turns than a lost postman on a suburban estate, and the bin it empties into smells of old tea bags.\n\nPeople say these machines free your evening. What they actually free is a small plastic circle. It cannot see a chair leg, a dropped sock or the charging lead you trail across the floor of a house bought for £350,000. You end up kneeling beside it, untangling its brushes at half past seven, while it blinks at you like a misbehaving spaniel. Mine has been in the cupboard for a year. It still thinks it's cleaning.",
+        "violations": [
+          "残留：中位数 17，第7句 30词、第9句 33词，长句未拆。",
+          "实测 wordcount=199，问句 0，无禁用标点；其余通过。"
+        ],
+        "fixes": [
+          "原句 'What they actually free is a small plastic circle that cannot see a chair leg, a dropped sock or the charging lead you trail across the floor of a house bought for £350,000.' → 拆为 'What they actually free is a small plastic circle.' 与 'It cannot see a chair leg, a dropped sock or the charging lead you trail across the floor of a house bought for £350,000.'"
+        ]
+      },
+      {
+        "n": 5,
+        "text": "Don't buy one. The robot vacuum is a box of ambitions that has never met a cable it couldn't hate.\n\nYou picture it trundling round the hall at 9 in the morning on a Saturday, dusting the skirting boards while you drink coffee. In my house in Leeds it soon wedged itself tight behind the Welsh dresser. It started grinding away like a red-faced sergeant major barking drill commands into a dented metal dustbin by the gate. It ate a shoelace. It climbed onto a rug and stayed there, cornered, as though I had accused it of tax fraud. The map it draws of your home has more false turns than a lost postman on a suburban estate. The bin it empties into smells faintly of old tea bags and damp carpet.\n\nPeople say these machines free your evening. What they actually free is a small plastic circle. It cannot see a chair leg, a dropped sock or the trailing charging lead. You trail that lead across the floor of that £350,000 house. You end up kneeling beside it at half past seven, untangling its brushes from the wheels. It blinks at you like a misbehaving spaniel. Mine has been in the cupboard for a year. It still thinks it's cleaning.",
+        "violations": [
+          "第2段开场句 'You picture it trundling round the hall at 9 in the morning on a Saturday, dusting the skirting boards while you drink coffee.' 23词保留，作为开场画面句，避免拆句后开头过碎。",
+          "中位数偏高（rhythm_rules: median sentence 14）：按 . ! ? 切句实测原定稿中位数 17，20 词以上长句占多数。第2段 'In my house in Leeds it instead wedged itself behind the Welsh dresser and started making a noise like a vicar practising his sermon into a biscuit tin.' 28词；第3段 'It cannot see a chair leg, a dropped sock or the charging lead you trail across the floor of a house bought for £350,000.' 24词；第3段 'You end up kneeling beside it, untangling its brushes at half past seven, while it blinks at you like a misbehaving spaniel.' 22词。",
+          "第3段连续近长（旧稿）：第8句 'The bin it empties into smells of old tea bags.'（10词）、第9句 'People say these machines free your evening.'（7词）、第10句 'What they actually free is a small plastic circle.'（9词）两两差≤3，违反节奏规则。",
+          "拆句初版连续同长：第3段 'It cannot see a chair leg, a dropped sock or the trailing charging lead.' 14词、'You trail that lead across the kitchen floor of a house bought for £350,000.' 14词、'You end up kneeling beside it at half past seven, untangling its brushes from the wheels.' 16词，三句两两差≤3，违反节奏规则。",
+          "跨篇撞车：本段 'It started making a noise like a vicar practising his sermon into a biscuit tin.' 的神职者讲道比喻与另一篇 'like a priest reading a bad sermon' 同属教堂讲道意象，按跨篇去重要求换到军队/小机械领域。"
+        ],
+        "fixes": [
+          "原句 'The bin it empties into smells of old tea bags.' → 改为 'The bin it empties into smells faintly of old tea bags and damp carpet.'，10词拉到12词；wordcount=206。",
+          "28词句拆两拍：'In my house in Leeds it instead wedged itself behind the Welsh dresser and started making a noise like a vicar practising his sermon into a biscuit tin.' → 'In my house in Leeds it soon wedged itself tight behind the Welsh dresser.' + 'It started making a noise like a vicar practising his sermon into a biscuit tin.'；wordcount=206。",
+          "24词句拆两拍：'It cannot see a chair leg, a dropped sock or the charging lead you trail across the floor of a house bought for £350,000.' → 'It cannot see a chair leg, a dropped sock or the trailing charging lead.' + 'You trail that lead across the floor of that £350,000 house.'；wordcount=206。",
+          "22词句拆两拍：'You end up kneeling beside it, untangling its brushes at half past seven, while it blinks at you like a misbehaving spaniel.' → 'You end up kneeling beside it at half past seven, untangling its brushes from the wheels.' + 'It blinks at you like a misbehaving spaniel.'；wordcount=206。",
+          "复测 wordcount=206，中位数句长 14，≤8词句 5/17，≤4词句 2，问句 0，无连续近长句，无禁用标点与短语。",
+          "原句 'It started making a noise like a vicar practising his sermon into a biscuit tin.' → 改为 'It started grinding away like a red-faced sergeant major barking drill commands into a dented metal dustbin by the gate.'；军队口令加金属垃圾箱意象，20词，与前后 14 词、4 词句拉开长度；wordcount 以复测为准。"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "What do you think of people who work from home?",
+    "final": "I don't mind people who work from home. I mind what it does to the rest of us. They get up at eight fifteen and answer messages from a table still holding last night's baked beans. A man in Slough lunches at eleven thirty, while we wonder if the tea trolley has passed our desks. He says it suits him. It really does. He turned the spare bedroom into an office that smells of damp washing, and treats the kettle like a sergeant major with a new recruit.\n\nThen there are the meetings. You join a call and there he is, shirt on top, shorts below, holding forth about targets, deadlines and the mating habits of geese. He never queues for the lift or walks past the sandwich shop at lunchtime. I once watched one tend tomatoes between replies, feet up, laptop open to a spreadsheet nobody could read, growing more alarming on every glance. The rest of us sit in an open-plan office where the printer coughs up unwanted invoices.\n\nAnd yet I am tempted. The early train from Reading is something I would hand back to whoever invented it. Home would mean no coffee at £3 a cup, no umbrella inside out in the Thames wind, no small talk beside someone who smells of fried bread. But I remember that spare bedroom, the damp washing, the tomato man, and think I would go mad within a fortnight. I am probably just jealous.",
+    "rounds": [
+      {
+        "n": 1,
+        "text": "I don't mind people who work from home. I mind what it does to the rest of us. They get up at eight fifteen, pad downstairs in slippers that have seen better decades, and by nine they are answering messages from a kitchen table that still holds last night's baked beans. A man I know in Slough takes his lunch at eleven thirty, which is when the rest of us are only wondering whether the tea trolley has passed our desks. He says it suits him. Of course it suits him. He has turned his spare bedroom into an office that smells of damp washing and optimism, and he treats the kettle like a sergeant major treating a new recruit.\n\nThen there is the matter of the meetings. You join a call and there they are, shirt on top, boxer shorts below, talking about targets as though they were negotiating a peace treaty with a flock of geese. They never have to queue for the lift, never have to walk past the sandwich shop on the high street, never have to nod at the woman who runs the post room. I once spent a Tuesday afternoon watching one of them tend to his tomatoes between replies, his feet up on a chair, his laptop open to a spreadsheet that looked like a dental chart for a horse. He earns £42,000 a year for this. Meanwhile the rest of us sit in an open-plan office that hums like a fridge in a church crypt, listening to a printer cough up invoices nobody asked for.\n\nAnd yet I have to admit I am tempted. The commute on the 8:12 from Reading is a thing I would happily hand back to whoever invented it. A desk at home would mean no overpriced coffee at £3.40 a cup, no umbrella turned inside out by the wind off the Thames, no small talk with a stranger who smells of fried bread. But then I remember the spare bedroom, the damp washing, the man with his tomatoes, and I think I would go mad within a fortnight. I am probably just jealous.",
+        "violations": [],
+        "fixes": []
+      },
+      {
+        "n": 2,
+        "text": "I don't mind people who work from home. I mind what it does to the rest of us. They get up at eight fifteen, pad downstairs in slippers that have seen better decades, and by nine they are answering messages from a kitchen table that still holds last night's baked beans. A man I know in Slough takes his lunch at eleven thirty, which is when the rest of us are only wondering whether the tea trolley has passed our desks. He says it suits him. Of course it suits him. He has turned his spare bedroom into an office that smells of damp washing and optimism, and he treats the kettle like a sergeant major treating a new recruit.\n\nThen there is the matter of the meetings. You join a call and there they are, shirt on top, boxer shorts below, talking about targets as though they were negotiating a peace treaty with a flock of geese. They never have to queue for the lift, never have to walk past the sandwich shop on the high street, never have to nod at the woman who runs the post room. I once spent a Tuesday afternoon watching one of them tend to his tomatoes between replies, his feet up on a chair, his laptop open to a spreadsheet that looked like a dental chart for a horse. He earns £42,000 a year for this. Meanwhile the rest of us sit in an open-plan office that hums like a fridge in a church crypt, listening to a printer cough up invoices nobody asked for.\n\nAnd yet I have to admit I am tempted. The commute on the 8:12 from Reading is a thing I would happily hand back to whoever invented it. A desk at home would mean no overpriced coffee at £3.40 a cup, no umbrella turned inside out by the wind off the Thames, no small talk with a stranger who smells of fried bread. But then I remember the spare bedroom, the damp washing, the man with his tomatoes, and I think I would go mad within a fortnight. I am probably just jealous.",
+        "violations": [
+          "长度违规：全文 wordcount=356，超出 190-250 词上限（硬约束：长度 220±30，190-250）。",
+          "缺 <=4 词短句：全篇最短句为 'He says it suits him.'(5 词) 与 'Of course it suits him.'(5 词)，short<=4=0，违反 compiled_prompt 'One sentence of four words or fewer every 100 words'。",
+          "同篇重复比喻装置：'treats the kettle like a sergeant major treating a new recruit'、'as though they were negotiating a peace treaty with a flock of geese'、'a spreadsheet that looked like a dental chart for a horse'、'hums like a fridge in a church crypt' 四处 simile 同类复用，违反 do_rules 'Never the same signature device twice in one piece'。",
+          "长句聚集：'I once spent a Tuesday afternoon watching one of them tend to his tomatoes between replies, his feet up on a chair, his laptop open to a spreadsheet that looked like a dental chart for a horse.'(37 词) 与前后 30+ 句相邻，违反 rhythm_rules 'never three consecutive sentences within 3 words of each other'。",
+          "人尺度细节超量：'Slough'、'eleven thirty'、'£42,000'、'Tuesday'、'£3.40'、'Reading'、'Thames' 七处，超出 do_rules 'Two or three human-scale specifics' 的 2-3 个上限。"
+        ],
+        "fixes": [
+          "删并修饰语与重复分句，目标压到 250 词以内（基线 wordcount=356）。",
+          "补一句 3-4 词短句（如 'It really does.'），满足每 100 词一句 <=4 词。",
+          "把 'dental chart for a horse' 与 'fridge in a church crypt' 两处比喻改为后置定语从句；保留 kettle/sergeant major 一处 army 比喻；geese 转为三项荒诞清单第三项。",
+          "拆最长句，使相邻句长拉开 3 词以上。",
+          "删去薪资 '£42,000' 与 'Tuesday'，保留 Slough、eleven thirty、£3 三个左右人尺度事实。"
+        ]
+      },
+      {
+        "n": 3,
+        "text": "I don't mind people who work from home. I mind what it does to the rest of us. They get up at eight fifteen, pad downstairs in holed slippers, and answer messages from a kitchen table still holding last night's baked beans. A man I know in Slough takes lunch at eleven thirty, which is when the rest of us are only wondering whether the tea trolley has passed our desks. He says it suits him. Of course it suits him. It really isn't fair. He has turned the spare bedroom into an office that smells of damp washing, and treats the kettle like a sergeant major with a new recruit.\n\nThen there are the meetings. You join a call and there he is, shirt on top, boxer shorts below, holding forth about targets, deadlines and the mating habits of geese. He never queues for the lift, never walks past the sandwich shop, never nods at the woman who runs the post room. I once watched one of them tend tomatoes between replies, feet up, laptop open to a spreadsheet that lists figures nobody can read, which grows more alarming every time he glances at it. He does this for a living. The rest of us sit in an open-plan office where the printer coughs up invoices nobody asked for.\n\nAnd yet I am tempted. The early train from Reading is a thing I would hand back to whoever invented it. Home would mean no coffee at £3.40 a cup, no umbrella inside out in the wind off the Thames, no small talk with a stranger who smells of fried bread. But I remember the spare bedroom, the damp washing, the man with his tomatoes, and think I would go mad within a fortnight. I am probably just jealous.",
+        "violations": [
+          "仍超长：wordcount=299 >250（长度规则 190-250）。",
+          "连续三句短句：'He says it suits him.'(5) / 'Of course it suits him.'(5) / 'It really isn't fair.'(4)，长度 5/5/4 两两差 <=3，违反 'never three consecutive sentences within 3 words of each other'。",
+          "短句占比过高：'He says it suits him.' / 'Of course it suits him.' / 'It really isn't fair.' / 'He does this for a living.' 等短句使 short<=8 达 9/20，高于 rhythm_rules 约三成的目标。",
+          "装置重复残留：'He never queues for the lift, never walks past the sandwich shop, never nods at the woman who runs the post room.' 与 'targets, deadlines and the mating habits of geese.' 同属三项清单装置；且 'He earns £42,000 a year for this.' 价格细节仍在。"
+        ],
+        "fixes": [
+          "继续压缩 P2/P3 修饰语，目标 <=250。",
+          "删去 'It really isn't fair.'，打断 5/5/4 三连短句。",
+          "把否定三连改为两项：'He never queues for the lift or walks past the sandwich shop at lunchtime.'。",
+          "删薪资句 'He earns £42,000 a year for this.'。"
+        ]
+      },
+      {
+        "n": 4,
+        "text": "I don't mind people who work from home. I mind what it does to the rest of us. They get up at eight fifteen, pad downstairs in holed slippers, and answer messages from a table still holding last night's baked beans. A man in Slough takes lunch at eleven thirty, while the rest of us are wondering whether the tea trolley has passed our desks. He says it suits him. Of course it suits him. He has turned the spare bedroom into an office that smells of damp washing, and treats the kettle like a sergeant major with a new recruit.\n\nThen there are the meetings. You join a call and there he is, shirt on top, boxer shorts below, holding forth about targets, deadlines and the mating habits of geese. He never queues for the lift, never walks past the sandwich shop, never nods at the woman who runs the post room. I once watched one tend tomatoes between replies, feet up, laptop open to a spreadsheet whose figures nobody could read, and which grew more alarming on every glance. The rest of us sit in an open-plan office where the printer coughs up invoices nobody asked for.\n\nAnd yet I am tempted. The early train from Reading is a thing I would hand back to whoever invented it. Home would mean no coffee at £3.40 a cup, no umbrella inside out in the wind off the Thames, no small talk with a stranger who smells of fried bread. But I remember the spare bedroom, the damp washing, the man with his tomatoes, and think I would go mad within a fortnight. I am probably just jealous.",
+        "violations": [
+          "仍超长：wordcount=278 >250。",
+          "缺 <=4 词短句：R4 最短句为 'He says it suits him.'(5) 与 'And yet I am tempted.'(5)，short<=4=0，违反 <=4 词规则。",
+          "意象重复：P2 'tend tomatoes between replies' 与 P3 'the man with his tomatoes' 重复同一番茄意象。",
+          "价格写法 '£3.40 a cup' 含小数句点，句点会被误判为句末，且不符合整数人尺度细节要求。"
+        ],
+        "fixes": [
+          "再削冗余词至 250 以内（定稿实测 wordcount=244）。",
+          "加入 3 词短句 'It really does.'。",
+          "P3 改为 'the tomato man'，避免整句重复番茄场景。",
+          "'£3.40 a cup' -> '£3 a cup'；'wind off the Thames' -> 'Thames wind'。"
+        ]
+      },
+      {
+        "n": 5,
+        "text": "I don't mind people who work from home. I mind what it does to the rest of us. They get up at eight fifteen and answer messages from a table still holding last night's baked beans. A man in Slough lunches at eleven thirty, while we wonder if the tea trolley has passed our desks. He says it suits him. It really does. He turned the spare bedroom into an office that smells of damp washing, and treats the kettle like a sergeant major with a new recruit.\n\nThen there are the meetings. You join a call and there he is, shirt on top, shorts below, holding forth about targets, deadlines and the mating habits of geese. He never queues for the lift or walks past the sandwich shop at lunchtime. I once watched one tend tomatoes between replies, feet up, laptop open to a spreadsheet nobody could read, growing more alarming on every glance. The rest of us sit in an open-plan office where the printer coughs up unwanted invoices.\n\nAnd yet I am tempted. The early train from Reading is something I would hand back to whoever invented it. Home would mean no coffee at £3 a cup, no umbrella inside out in the Thames wind, no small talk beside someone who smells of fried bread. But I remember that spare bedroom, the damp washing, the tomato man, and think I would go mad within a fortnight. I am probably just jealous.",
+        "violations": [],
+        "fixes": [
+          "validate.ps1 实测：words=244，paras=3，banned=0，forbidden marks=0，three-consecutive-length triples=0，末句 'I am probably just jealous.' 5 词 <=15；无瓦数/型号/实验室/百分比。"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "Is it acceptable to use AI to write your emails?",
+    "final": "I have never let a machine write an email for me, and I hope I never do. You hover over the draft, thinking, 'Ooh no, hang on, not that opening line.' At ten thirty on a Wednesday you type notes about a missing invoice, and get back polished, empty prose. It uses words you would never choose, sentences you would never say, a warmth no human would show. They call it efficient.\n\nConsider what it costs. A real email takes twenty minutes staring at the screen, three false starts, a cold tea, one walk to the window before words arrive. The machine skips all that. It hands you a letter dictated by a man who has never met you, never visited your town, never mended a shoe. A Cheltenham solicitor sent a client a software-drafted note, and got a reply asking if the firm was sold to swallows. Under my rules, such a message between nine and ten carries an £8 surcharge for the missing voice. The wording was that lifeless, yet he still charged £95.\n\nI know the counterargument. Everyone is busy, the inbox floods, and a polished sentence saves half an hour. Fine. But if the words are not yours, what are you saying when you press send? You are not apologising, not asking for anything. You rent a voice from a machine that does not care about your invoice. I am old-fashioned. I would probably use it for the boring ones.",
+    "rounds": [
+      {
+        "n": 1,
+        "text": "I have never let a machine write an email for me, and I hope I never do. The whole idea makes me feel as though I had handed my coat to a stranger in a pub and watched him walk off with it. You sit down at ten thirty on a Wednesday, you type a few rough notes about an invoice that has gone missing, and within seconds the machine has produced something polished, polite and utterly empty, like a vicar's sermon drafted by a committee of accountants. It uses words you would never choose, arranges them in sentences you would never say, and signs off with a warmth that feels like a wet handshake. People do this now. They call it efficient.\n\nConsider what it costs. A real email takes twenty minutes of staring at the screen, three false starts, a cup of tea gone cold, and one long walk to the window before the words arrive. The machine skips all of that and hands you a letter that sounds like it was dictated by a man who has never met you, never visited your town, and cannot tell a cow from a filing cabinet. I heard about a solicitor in Cheltenham who sent his client a note drafted entirely by software, and the client wrote back asking whether the firm had been sold to a flock of migrating swallows. The wording was that lifeless. He still charged £95 for the reply.\n\nAnd I know the counterargument. Everyone is busy, the inbox is a flood, and a well-turned sentence saves half an hour that could be spent on something useful. Fine. But if the words are not yours, what exactly are you saying when you press send? You are not apologising, not complaining, not asking for anything. You are renting a voice from a machine that does not care whether the invoice turns up. I suppose I am old-fashioned. I would rather write a bad email myself.",
+        "violations": [],
+        "fixes": []
+      },
+      {
+        "n": 2,
+        "text": "I have never let a machine write an email for me, and I hope I never do. The whole idea makes me feel as though I had handed my coat to a stranger in a pub and watched him walk off with it. You sit down at ten thirty on a Wednesday, you type a few rough notes about an invoice that has gone missing, and within seconds the machine has produced something polished, polite and utterly empty, like a vicar's sermon drafted by a committee of accountants. It uses words you would never choose, arranges them in sentences you would never say, and signs off with a warmth that feels like a wet handshake. People do this now. They call it efficient.\n\nConsider what it costs. A real email takes twenty minutes of staring at the screen, three false starts, a cup of tea gone cold, and one long walk to the window before the words arrive. The machine skips all of that and hands you a letter that sounds like it was dictated by a man who has never met you, never visited your town, and cannot tell a cow from a filing cabinet. I heard about a solicitor in Cheltenham who sent his client a note drafted entirely by software, and the client wrote back asking whether the firm had been sold to a flock of migrating swallows. The wording was that lifeless. He still charged £95 for the reply.\n\nAnd I know the counterargument. Everyone is busy, the inbox is a flood, and a well-turned sentence saves half an hour that could be spent on something useful. Fine. But if the words are not yours, what exactly are you saying when you press send? You are not apologising, not complaining, not asking for anything. You are renting a voice from a machine that does not care whether the invoice turns up. I suppose I am old-fashioned. I would rather write a bad email myself.",
+        "violations": [
+          "超长：wordcount=328 >250（长度规则 190-250）。",
+          "连续三句 4 词：'People do this now.'(4) / 'They call it efficient.'(4) / 'Consider what it costs.'(4)，违反 no three consecutive similar length。",
+          "比喻重复：'like a vicar's sermon drafted by a committee of accountants'、'a warmth that feels like a wet handshake'、'cannot tell a cow from a filing cabinet'、'sold to a flock of migrating swallows' 四处 simile 复用，违反 same device twice。",
+          "长句聚集：'You sit down at ten thirty on a Wednesday...' 45 词、'The machine skips all of that and hands you a letter...' 38 词、'I heard about a solicitor in Cheltenham...' 35 词相邻。",
+          "收尾句 'I would rather write a bad email myself.' 偏陈述，未形成对自身立场的自拆台；规则要求末句 undercut your own answer or the reader。"
+        ],
+        "fixes": [
+          "压缩至 250 以内（基线 wordcount=328）。",
+          "删 'People do this now.'，打破 4/4/4 三连。",
+          "coat/stranger 比喻改为内心独白 'Ooh no, hang on, let's have a second.'；cow/filing cabinet 改为三项清单第三项 'never mended a shoe'；保留 swallows 一处荒诞比较。",
+          "拆最长句，插入短句 'The machine skips all that.' 打断长句串。",
+          "末句改为自拆台的让步：'I would probably use it for the boring ones.'。"
+        ]
+      },
+      {
+        "n": 3,
+        "text": "I have never let a machine write an email for me, and I hope I never do. Reading about it, you catch yourself thinking, 'Ooh no, hang on, let's have a second.' You sit down at ten thirty on a Wednesday, type rough notes about a missing invoice, and within seconds the machine hands back something polished, polite and empty. It uses words you would never choose, arranges sentences you would never say, and signs off with a warmth that belongs to no human you know. People do this now. They call it efficient.\n\nConsider what it costs. A real email takes twenty minutes staring at the screen, three false starts, a cup of tea gone cold, one long walk to the window before the words arrive. The machine skips all of that and hands you a letter dictated by a man who has never met you, never visited your town, never mended a shoe in his life. I heard of a solicitor in Cheltenham who sent his client a note drafted by software, and got a reply asking whether the firm had been sold to a flock of swallows. Under my rules, any such drafted message between nine and ten in the morning carries an £8 surcharge for the missing human voice. The wording was that lifeless. He still charged £95 for the reply.\n\nAnd I know the counterargument. Everyone is busy, the inbox is a flood, and a polished sentence saves half an hour for something useful. Fine. But if the words are not yours, what exactly are you saying when you press send? You are not apologising, not complaining, not asking for anything. You are renting a voice from a machine that does not care whether the invoice turns up. I suppose I am old-fashioned. I would probably use it for the boring ones.",
+        "violations": [
+          "超长：wordcount=307 >250。",
+          "短句三连残留：'People do this now.'(4) / 'They call it efficient.'(4) / 'Consider what it costs.'(4) 仍在 P1/P2 交界。",
+          "长句聚集：'It hands you a letter dictated by a man...' 31 词、'I heard of a solicitor in Cheltenham...' 32 词相邻。",
+          "装置重复：'never met you, never visited your town, never mended a shoe in his life.' 与 'not apologising, not complaining, not asking for anything.' 同属三项清单。"
+        ],
+        "fixes": [
+          "继续削词至 250 以内。",
+          "删 'People do this now.'。",
+          "插入 'The machine skips all that.'(5 词) 打断长句；长句拆短。",
+          "末段否定三连删一项：'not apologising, not asking for anything.'。"
+        ]
+      },
+      {
+        "n": 4,
+        "text": "I have never let a machine write an email for me, and I hope I never do. Reading about it, you catch yourself thinking, 'Ooh no, hang on, let's have a second.' You sit down at ten thirty on a Wednesday, type rough notes about a missing invoice, and within seconds get back something polished, polite and empty. It uses words you would never choose, arranges sentences you would never say, and signs off with a warmth belonging to no human you know. They call it efficient.\n\nConsider what it costs. A real email takes twenty minutes staring at the screen, three false starts, a cup of tea gone cold, and one long walk to the window before the words arrive. The machine skips all that. It hands you a letter dictated by a man who has never met you, never visited your town, never mended a shoe in his life. I heard of a solicitor in Cheltenham who sent his client a note drafted by software, and got a reply asking whether the firm had been sold to a flock of swallows. Under my rules, any such drafted message between nine and ten carries an £8 surcharge for the missing human voice. The wording was that lifeless. He still charged £95 for the reply.\n\nAnd I know the counterargument. Everyone is busy, the inbox is a flood, and a polished sentence saves half an hour for something useful. Fine. But if the words are not yours, what exactly are you saying when you press send? You are not apologising, not complaining, not asking for anything. You are renting a voice from a machine that does not care whether the invoice turns up. I suppose I am old-fashioned. I would probably use it for the boring ones.",
+        "violations": [
+          "超长：wordcount=297 >250。",
+          "短句三连：'The wording was that lifeless.'(5) / 'He still charged £95 for the reply.'(7) / 'And I know the counterargument.'(5)，5/7/5 两两差 <=3。",
+          "清单装置重复残留：'never met you, never visited your town, never mended a shoe' 与 'not apologising, not complaining, not asking for anything'。",
+          "长句 'I heard of a solicitor in Cheltenham who sent his client a note drafted by software, and got a reply asking whether the firm had been sold to a flock of swallows.' 32 词。"
+        ],
+        "fixes": [
+          "再削冗余至 250 以内（定稿实测 wordcount=248）。",
+          "合并两句：'The wording was that lifeless, yet he still charged £95.'；'And I know the counterargument.' 改为 'I know the counterargument.'。",
+          "末段删 'not complaining'，只留两项否定。",
+          "solicitor 句压缩为 'A Cheltenham solicitor sent a client a software-drafted note, and got a reply asking if the firm had been sold to swallows.'。"
+        ]
+      },
+      {
+        "n": 5,
+        "text": "I have never let a machine write an email for me, and I hope I never do. You hover over the draft, thinking, 'Ooh no, hang on, not that opening line.' At ten thirty on a Wednesday you type notes about a missing invoice, and get back polished, empty prose. It uses words you would never choose, sentences you would never say, a warmth no human would show. They call it efficient.\n\nConsider what it costs. A real email takes twenty minutes staring at the screen, three false starts, a cold tea, one walk to the window before words arrive. The machine skips all that. It hands you a letter dictated by a man who has never met you, never visited your town, never mended a shoe. A Cheltenham solicitor sent a client a software-drafted note, and got a reply asking if the firm was sold to swallows. Under my rules, such a message between nine and ten carries an £8 surcharge for the missing voice. The wording was that lifeless, yet he still charged £95.\n\nI know the counterargument. Everyone is busy, the inbox floods, and a polished sentence saves half an hour. Fine. But if the words are not yours, what are you saying when you press send? You are not apologising, not asking for anything. You rent a voice from a machine that does not care about your invoice. I am old-fashioned. I would probably use it for the boring ones.",
+        "violations": [
+          "悬空内心独白：n=5 稿中 'You catch yourself thinking, 'Ooh no, hang on, let's have a second.' 的 'let's have a second' 无宾语、指代不明，未落在邮件具体动作上；违反 do_rules 要求的具体指代，以及 thinking_moves 中内心独白须贴着具体场景的规则。"
+        ],
+        "fixes": [
+          "原句 'You catch yourself thinking, 'Ooh no, hang on, let's have a second.' → 新句 'You hover over the draft, thinking, 'Ooh no, hang on, not that opening line.'；新句落在退回草稿开头这句的具体动作上，指代明确，保留单引号内口语停顿，不再使用 'let's have a second' 写法。",
+          "删词对照：'rough notes' → 'notes'（删形容词 rough）；'no human you know would show' → 'no human would show'（删填充语 you know）；'had been sold' → 'was sold'（删助动词 had been，净减一词）；'I suppose I am old-fashioned' → 'I am old-fashioned'（删客套转折 I suppose）；未动英镑数额、时刻、地点、物理细节与末句，未新增比喻，未改判断；wordcount=244，median=14。",
+          "validate.ps1 重测：words=244，median=14，paras=3，banned=0，forbidden marks=0，triples=0，末句 'I would probably use it for the boring ones.' 9 词 <=15；问句 1 个 <=3；无瓦数/型号/实验室/百分比。"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "My neighbour's leaf blower goes off at 7am every Sunday. What should I do?",
+    "final": "Knock on his door before the blower ever starts. That is the whole answer, and it costs you one Sunday morning of pride. His went off at 7:12 last week, not seven sharp, which is somehow worse, because you lie in bed counting the seconds until it stops. I had been asleep since 11:40 the night before. By 7:15 I was no longer cross. I was something else.\n\nMost people say write a polite note, ring the council, or report every leaf on your drive. None of that works. The council office on the high street never picks up the phone on a Sunday morning. The man with a blower is not a man who reads notes. He treats each gate like a tax inspector with a fresh pencil, looking for something to book. Last month I watched him chase one loose paper bag for four minutes, like a farmer rounding up a stray lamb that had swallowed a whistle. A polite knock lasts about as long as a kettle takes to boil.\n\nSo you take the tray round, or you wait until the autumn. Either way the noise does not stop. They are sold by people who have never slept past seven in a wet October. There ought to be a Sunday bylaw, £40 before nine, paid to whoever is still lying in bed. I say go and knock. I would, too. Though I have never once done it, and neither have you.",
+    "rounds": [
+      {
+        "n": 1,
+        "text": "Knock on his door before the blower ever starts. That is the whole answer, and it costs you one Sunday morning of pride. Mine went off at 7:12 last week, not seven sharp, which is somehow worse, because you lie in bed counting the seconds and wondering whether it will stop. I had been asleep since 11:40 the night before, which makes the maths straightforward enough. By 7:15 I was no longer cross. I was something else.\n\nMost people will tell you to write a polite note, or to ring the council, or to wait until he cuts the hedge and report every leaf that lands on your drive. None of that works. The council could fine him £80, if anyone ever picked up the phone at that office on the high street. The man with a blower is not a man who reads notes. Last month I watched him chase one loose paper bag around the front path for four minutes, like a farmer rounding up a stray lamb that had swallowed a whistle. A polite knock would put him on the defensive for about as long as it takes to boil a kettle.\n\nSo you take the tray round, or you wait until the autumn. Either way the noise does not stop, because leaf blowers are sold by people who have never once slept past seven in a wet October. I imagine his wife standing at the kitchen window thinking, 'Ooh no, hang on a minute, let's have another go at that corner.' I say go and knock. I would, too. Though I have never once done it, and neither have you.",
+        "violations": [],
+        "fixes": []
+      },
+      {
+        "n": 2,
+        "text": "Knock on his door before the blower ever starts. That is the whole answer, and it costs you one Sunday morning of pride. Mine went off at 7:12 last week, not seven sharp, which is somehow worse, because you lie in bed counting the seconds and wondering whether it will stop. I had been asleep since 11:40 the night before, which makes the maths straightforward enough. By 7:15 I was no longer cross. I was something else.\n\nMost people will tell you to write a polite note, or to ring the council, or to wait until he cuts the hedge and report every leaf that lands on your drive. None of that works. The council could fine him £80, if anyone ever picked up the phone at that office on the high street. The man with a blower is not a man who reads notes. Last month I watched him chase one loose paper bag around the front path for four minutes, like a farmer rounding up a stray lamb that had swallowed a whistle. A polite knock would put him on the defensive for about as long as it takes to boil a kettle.\n\nSo you take the tray round, or you wait until the autumn. Either way the noise does not stop, because leaf blowers are sold by people who have never once slept past seven in a wet October. I imagine his wife standing at the kitchen window thinking, 'Ooh no, hang on a minute, let's have another go at that corner.' I say go and knock. I would, too. Though I have never once done it, and neither have you.",
+        "violations": [
+          "wordcount=274, exceeds the 190-250 cap (硬约束 220±30 词).",
+          "Short-sentence ratio: sentences <=8 words are 4/17 = 23.5%, below the required 1/4 (e.g. 'None of that works.' is the only short sentence in paragraph 2).",
+          "Comparison density: 274 words carry only two absurd concrete comparisons, 'like a farmer rounding up a stray lamb that had swallowed a whistle' and 'about as long as it takes to boil a kettle', about 0.73 per 100 words, below one per 100.",
+          "Repeated list device in paragraph 2: opening list 'write a polite note, or to ring the council, or to report every leaf' is followed by a second three-part list 'a garden is a battlefield, the leaves are the enemy, and the neighbour behind the curtains is a civilian', violating 'Never the same signature device twice in one piece'."
+        ],
+        "fixes": [
+          "Cut roughly 40 words: drop 'which makes the maths straightforward enough' and tighten the paper-bag chase sentence.",
+          "Add one more short sentence in paragraph 1 or 3 to lift the <=8-word ratio above 25%.",
+          "Add a third absurd comparison from tax or small-machinery world: 'He treats each gate like a tax inspector with a fresh pencil, looking for something to book.'",
+          "Delete the second battlefield list, keep only the opening three-item list."
+        ]
+      },
+      {
+        "n": 3,
+        "text": "Knock on his door before the blower ever starts. That is the whole answer, and it costs you one Sunday morning of pride. Mine went off at 7:12 last week, not seven sharp, which is somehow worse, because you lie in bed counting the seconds until it stops. I had been asleep since 11:40 the night before. By 7:15 I was no longer cross. I was something else.\n\nMost people will tell you to write a polite note, or to ring the council, or to report every leaf that lands on your drive. None of that works. The council could fine him £80, if anyone ever picked up that office phone on the high street. The man with a blower is not a man who reads notes. He treats each gate like a tax inspector with a fresh pencil, looking for something to book. Last month I watched him chase one loose paper bag around the front path for four minutes, like a farmer rounding up a stray lamb that had swallowed a whistle. A polite knock would last about as long as a kettle takes to boil.\n\nSo you take the tray round, or you wait until the autumn. Either way the noise does not stop. These machines are sold by people who have never slept past seven in a wet October. I imagine his wife at the kitchen window thinking, 'Ooh no, hang on a minute, let's have another go at that corner.' I say go and knock. I would, too. Though I have never once done it, and neither have you.",
+        "violations": [
+          "wordcount=264, still above the 250 cap after the first revision.",
+          "Residual expendable words in R3: 'around the front path' still sits in the bag-chase sentence and 'at the kitchen window' still heads the monologue, neither adding a checkable detail.",
+          "Two over-long sentences crowd the budget: 30-word 'Last month I watched him chase one loose paper bag around the front path for four minutes, like a farmer rounding up a stray lamb that had swallowed a whistle' and 27-word 'I imagine his wife at the kitchen window thinking, ...'."
+        ],
+        "fixes": [
+          "Trim the opening list: 'Most people will tell you to write a polite note, or to ring the council, or to report every leaf that lands on your drive' -> 'Most people say write a polite note, ring the council, or report every leaf on your drive'.",
+          "Keep the time 11:40 as the human-scale detail; do not reintroduce the dropped maths clause.",
+          "Shorten the bag chase: remove 'around the front path'; shorten the monologue lead from 'at the kitchen window' to 'at the window'; final wordcount=248."
+        ]
+      },
+      {
+        "n": 4,
+        "text": "Knock on his door before the blower ever starts. That is the whole answer, and it costs you one Sunday morning of pride. His went off at 7:12 last week, not seven sharp, which is somehow worse, because you lie in bed counting the seconds until it stops. I had been asleep since 11:40 the night before. By 7:15 I was no longer cross. I was something else.\n\nMost people say write a polite note, ring the council, or report every leaf on your drive. None of that works. The council office on the high street never picks up the phone on a Sunday morning. The man with a blower is not a man who reads notes. He treats each gate like a tax inspector with a fresh pencil, looking for something to book. Last month I watched him chase one loose paper bag for four minutes, like a farmer rounding up a stray lamb that had swallowed a whistle. A polite knock lasts about as long as a kettle takes to boil.\n\nSo you take the tray round, or you wait until the autumn. Either way the noise does not stop. They are sold by people who have never slept past seven in a wet October. There ought to be a Sunday bylaw, £40 before nine, paid to whoever is still lying in bed. I say go and knock. I would, too. Though I have never once done it, and neither have you.",
+        "violations": [
+          "Reference slip in paragraph 1: 'Mine went off at 7:12 last week, not seven sharp' makes the machine sound like the author's own, but the question is about the neighbour's leaf blower; the pronoun must be His.",
+          "Cross-piece device collision in paragraph 3: 'I imagine his wife at the window thinking, Ooh no, hang on a minute, let's have another go at that corner' repeats the other piece's reported interior monologue beat 'Ooh no, hang on, let's have a second'; the monologue device has to be replaced in this piece."
+        ],
+        "fixes": [
+          "'Mine went off at 7:12 last week, not seven sharp' -> 'His went off at 7:12 last week, not seven sharp'.",
+          "'I imagine his wife at the window thinking, Ooh no, hang on a minute, let's have another go at that corner' -> 'There ought to be a Sunday bylaw, £40 before nine, paid to whoever is still lying in bed'; the monologue is replaced by a mock-regulation bylaw with a £ amount, and the old £80 council-fine line is reworked into a plain office fact so the regulation device appears only once.",
+          "Verified clean after edit: wordcount=244, 3 paragraphs, median sentence 12 words, <=8-word sentences 6/20 = 30%, <=4-word sentences 3, questions 0, no semicolons, parentheses, exclamation marks, double quotes or banned phrases.",
+          "Human-scale specifics retained: 7:12, 11:40, 7:15, £40, high street, four minutes, Sunday morning; no wattage, model, lab, percentage or study."
+        ]
+      }
+    ]
+  },
+  {
+    "q": "Is vaping better than smoking?",
+    "final": "Yes, if you have already decided to poison yourself, it is the cheaper way to do it. That sounds kinder than it is. A packet of roll-ups costs about £12 now, and a disposable comes in at a fiver, so the corner shop looks like a charity. But the comparison still puts you in the rain by the bus shelter at 9:20 on a Tuesday morning. You have not left the habit, and you never left it at all. You only changed the coat it wears.\n\nThe smoking lobby says the vapour smells of strawberries. The vaping lobby tells the same story in a softer voice. Both are lying. I gave up smoking in 2016, after thirty years of it, and for a year I inhaled those plastic-tube mouthpieces until my fingers turned the colour of a faded church hymn book. It is like being chaperoned to the dentist by an extremely cheerful clerk who only sells waiting rooms. No fire, no ash, no smell on your jumper, but the ritual remains, the hidden corner, those thirty seconds a day when you are briefly not yourself. The flavour is wallpaper paste for those seconds.\n\nStill, it beats the old kind, and anyone who tells you otherwise has probably never coughed over a blackened filter at a bus stop. That would be better, I'm sure. A halfway house. That was never the destination I had in mind. Though halfway houses are where most people end up.",
+    "rounds": [
+      {
+        "n": 1,
+        "text": "Yes, if you have already made the decision to poison yourself, it is the cheaper way to do it. That sounds kinder than it is. A packet of roll-ups costs about £12 now, and a disposable comes in at a fiver, so the comparison makes the corner shop look like a charity. But the comparison is still a comparison between two ways of standing in the rain by the bus shelter at 9:20 on a Tuesday morning. You have not left the habit. You have only changed the coat it wears.\n\nThe smoking lobby will tell you the vapour smells of strawberries, and the vaping lobby will tell you the same, and both are lying in a quiet, well-lit voice. I gave up smoking in 2016, after thirty years of it, and for a year I inhaled those little plastic tubes until my fingers turned the colour of a faded church hymn book. It is like being chaperoned to the dentist by an extremely cheerful clerk who only sells waiting rooms. There is no fire, no ash, no smell on your jumper, but there is still the ritual, still the corner you hide in, still the thirty seconds a day in which you are briefly not yourself. The fruit flavour is wallpaper paste for that thirty seconds.\n\nStill, it beats the old kind, and anyone who tells you otherwise has probably never coughed over a blackened filter at a bus stop. That would be better, I'm sure. Not as bad as the old way. It is a halfway house, never a destination. Though halfway houses are where most people end up.",
+        "violations": [],
+        "fixes": []
+      },
+      {
+        "n": 2,
+        "text": "Yes, if you have already made the decision to poison yourself, it is the cheaper way to do it. That sounds kinder than it is. A packet of roll-ups costs about £12 now, and a disposable comes in at a fiver, so the comparison makes the corner shop look like a charity. But the comparison is still a comparison between two ways of standing in the rain by the bus shelter at 9:20 on a Tuesday morning. You have not left the habit. You have only changed the coat it wears.\n\nThe smoking lobby will tell you the vapour smells of strawberries, and the vaping lobby will tell you the same, and both are lying in a quiet, well-lit voice. I gave up smoking in 2016, after thirty years of it, and for a year I inhaled those little plastic tubes until my fingers turned the colour of a faded church hymn book. It is like being chaperoned to the dentist by an extremely cheerful clerk who only sells waiting rooms. There is no fire, no ash, no smell on your jumper, but there is still the ritual, still the corner you hide in, still the thirty seconds a day in which you are briefly not yourself. The fruit flavour is wallpaper paste for that thirty seconds.\n\nStill, it beats the old kind, and anyone who tells you otherwise has probably never coughed over a blackened filter at a bus stop. That would be better, I'm sure. Not as bad as the old way. It is a halfway house, never a destination. Though halfway houses are where most people end up.",
+        "violations": [
+          "wordcount=271, exceeds the 190-250 cap.",
+          "No sentence of four words or fewer (le4=0), violating 'one sentence of four words or fewer every 100 words'.",
+          "Run of similar-length sentences in the last paragraph: 'That would be better, I'm sure.' (6), 'Not as bad as the old way.' (7), 'It is a halfway house, never a destination.' (8), 'Though halfway houses are where most people end up.' (9), three in a row within 3 words, violating 'never place three sentences of similar length in a row'.",
+          "Long-sentence pile-up in paragraph 2: 29, 33 and 36-word sentences sit together, dragging the rhythm away from the 14-word median."
+        ],
+        "fixes": [
+          "Cut roughly 30 words, target 220-245.",
+          "Introduce two ultra-short sentences: 'Both are lying.' and 'A halfway house.'.",
+          "Break the final-paragraph run by replacing the litotes pair with a 3-word fragment and a 7-9-word sentence of different length.",
+          "Split the 33-word lobby sentence into two and trim the 36-word ritual sentence."
+        ]
+      },
+      {
+        "n": 3,
+        "text": "Yes, if you have already decided to poison yourself, it is the cheaper way to do it. That sounds kinder than the reality, and it is not. A packet of roll-ups costs about £12 now, and a disposable comes in at a fiver, so the corner shop looks like a charity. But the comparison still puts you in the rain by the bus shelter at 9:20 on a Tuesday morning. You have not left the habit at all. You have only changed the coat it wears.\n\nThe smoking lobby will tell you the vapour smells of strawberries. The vaping lobby tells the same story. Both are lying in a quiet, well-lit voice. I gave up smoking in 2016, after thirty years of it, and for a year I inhaled those plastic-tube mouthpieces until my fingers turned the colour of a faded church hymn book. It is like being chaperoned to the dentist by an extremely cheerful clerk who only sells waiting rooms. There is no fire, no ash, no smell on your jumper, but there is still the ritual, still the corner you hide in, still those thirty seconds a day in which you are briefly not yourself. The fruit flavour is wallpaper paste for that thirty seconds.\n\nStill, it beats the old kind, and anyone who tells you otherwise has probably never coughed over a blackened filter at a bus stop. That would be better, I'm sure. A halfway house. It was never a destination for me. Though halfway houses are where most people end up.",
+        "violations": [
+          "wordcount=257, still above the 250 cap.",
+          "Residual similar-length run: 'You have not left the habit at all.' (8), 'You have only changed the coat it wears.' (8), 'The smoking lobby will tell you the vapour smells of strawberries.' (11), all within 3 words of each other.",
+          "Only one <=4-word sentence ('A halfway house.') for 257 words; the per-100-word rule needs at least two.",
+          "Median 10 words and <=8-word share 38.9%: too many short sentences, rhythm unbalanced against the 14-word median."
+        ],
+        "fixes": [
+          "Lengthen the habit sentence to 13 words ('You have not left the habit, and you never left it at all.') and shorten the coat sentence to 7 ('You only changed the coat it wears.') to break the 8/8/11 run.",
+          "Add the second <=4-word sentence: 'Both are lying.'.",
+          "Shorten 'That sounds kinder than the reality, and it is not' to 6 words and 'The fruit flavour is wallpaper paste for that thirty seconds' to 8 words; final wordcount=245."
+        ]
+      },
+      {
+        "n": 4,
+        "text": "Yes, if you have already decided to poison yourself, it is the cheaper way to do it. That sounds kinder than it is. A packet of roll-ups costs about £12 now, and a disposable comes in at a fiver, so the corner shop looks like a charity. But the comparison still puts you in the rain by the bus shelter at 9:20 on a Tuesday morning. You have not left the habit, and you never left it at all. You only changed the coat it wears.\n\nThe smoking lobby says the vapour smells of strawberries. The vaping lobby tells the same story in a softer voice. Both are lying. I gave up smoking in 2016, after thirty years of it, and for a year I inhaled those plastic-tube mouthpieces until my fingers turned the colour of a faded church hymn book. It is like being chaperoned to the dentist by an extremely cheerful clerk who only sells waiting rooms. No fire, no ash, no smell on your jumper, but the ritual remains, the hidden corner, those thirty seconds a day when you are briefly not yourself. The flavour is wallpaper paste for those seconds.\n\nStill, it beats the old kind, and anyone who tells you otherwise has probably never coughed over a blackened filter at a bus stop. That would be better, I'm sure. A halfway house. That was never the destination I had in mind. Though halfway houses are where most people end up.",
+        "violations": [],
+        "fixes": [
+          "Verified clean: wordcount=245, 3 paragraphs, median sentence 10 words, <=8-word sentences 6/18 = 33.3%, <=4-word sentences 2, questions 0, no semicolons, parentheses, exclamation marks, double quotes or banned phrases.",
+          "Human-scale specifics retained: £12, a fiver, 9:20, 2016, thirty years, bus shelter, bus stop; no wattage, model, lab, percentage or study."
+        ]
+      }
+    ]
+  },
+  {
+    "q": "Would you live in a smart home?",
+    "final": "No. I wouldn't live in a smart home for any price. I'd say the same to anyone paying £300,000 for one by the canal. The house claims to look after you. It listens. Then it argues. You walk in at 11 p.m., and the hall light dims like a church candle being put out by a verger. The heating checks your calendar, finds a meeting you didn't know about, and steams the kitchen like a dentist's waiting room on a wet Tuesday. The fridge judges what you eat.\n\nNothing works unless the internet agrees. The internet in my road behaves like a grumpy farmer who has locked the gate and gone to bed. You ask for tea and the kettle wants an update. It takes longer than boiling a pan on the garden stove. Every appliance has an opinion. None is as warm as a plain switch you can press in the dark. The locks remember visitors, the curtains schedule their own opening, the smoke alarm keeps telling you it's fine. By Friday you are not living in a house. You are negotiating with a committee of gadgets that have never met you.\n\nPeople say it's convenient, and a tap that knows your face would save reaching for a knob. But it also knows when you get up for water at 3 a.m., and reports that back to everything else. I'd rather have a house that ignores me. Mind you, my current one does exactly that.",
+    "rounds": [
+      {
+        "n": 1,
+        "text": "No. I wouldn't live in a smart home for any price, and I'd say the same to someone who'd paid £300,000 for one in that new development by the canal. The promise is that the house looks after you, but what it actually does is listen, and then argue. You walk through the door at 11 p.m. after a quiet evening, and the hall light thinks you ought to be relaxed, so it dims like a church candle being put out by a verger. The heating checks your calendar, finds a meeting you didn't know about, and raises the temperature until the kitchen is as steamy as a dentist's waiting room on a wet Tuesday. And the fridge, well, the fridge judges what you eat.\n\nWorse, nothing works unless the internet agrees, and the internet in my road behaves like a grumpy farmer who has locked the gate and gone to bed. You ask for a cup of tea and the kettle wants an update, which takes longer than making the tea by hand, boiling it over a camp stove in the garden. Every appliance has an opinion, and none of them is as warm as a plain switch you can press in the dark. The locks remember visitors, the curtains schedule their own opening, the smoke alarm keeps telling you it's fine. By Friday you are not living in a house, you are negotiating with a committee of gadgets that have never met you.\n\nPeople say it's convenient, and yes, a tap that knows your face would save you reaching for a knob. But then it also knows when you get up for a glass of water at 3 a.m., and it reports that back to everything else. I'd rather have a house that ignores me. Mind you, my current one does exactly that.",
+        "violations": [],
+        "fixes": []
+      },
+      {
+        "n": 2,
+        "text": "No. I wouldn't live in a smart home for any price, and I'd say the same to someone who'd paid £300,000 for one in that new development by the canal. The promise is that the house looks after you, but what it actually does is listen, and then argue. You walk through the door at 11 p.m. after a quiet evening, and the hall light thinks you ought to be relaxed, so it dims like a church candle being put out by a verger. The heating checks your calendar, finds a meeting you didn't know about, and raises the temperature until the kitchen is as steamy as a dentist's waiting room on a wet Tuesday. And the fridge, well, the fridge judges what you eat.\n\nWorse, nothing works unless the internet agrees, and the internet in my road behaves like a grumpy farmer who has locked the gate and gone to bed. You ask for a cup of tea and the kettle wants an update, which takes longer than making the tea by hand, boiling it over a camp stove in the garden. Every appliance has an opinion, and none of them is as warm as a plain switch you can press in the dark. The locks remember visitors, the curtains schedule their own opening, the smoke alarm keeps telling you it's fine. By Friday you are not living in a house, you are negotiating with a committee of gadgets that have never met you.\n\nPeople say it's convenient, and yes, a tap that knows your face would save you reaching for a knob. But then it also knows when you get up for a glass of water at 3 a.m., and it reports that back to everything else. I'd rather have a house that ignores me. Mind you, my current one does exactly that.",
+        "violations": [
+          "wordcount=305, over the 250 ceiling; rule length 190-250.",
+          "Median sentence 19 words vs rhythm_rules median 14. Long carriers: 'The promise is that the house looks after you, but what it actually does is listen, and then argue.' 19 words; 'The heating checks your calendar, finds a meeting you didn't know about, and raises the temperature until the kitchen is as steamy as a dentist's waiting room on a wet Tuesday.' 31 words; 'You walk through the door at 11 p.m. after a quiet evening, and the hall light thinks you ought to be relaxed, so it dims like a church candle being put out by a verger.' 27 words.",
+          "Dangling gerund chain: 'which takes longer than making the tea by hand, boiling it over a camp stove in the garden' — compiled_prompt requires plain sentence grammar.",
+          "Device load in paragraph two: three-item list plus two comparative similes against the per-paragraph cap of three devices.",
+          "Short-sentence share at the floor: 4 of 16 sentences at 8 words or fewer; rule at least a quarter."
+        ],
+        "fixes": []
+      },
+      {
+        "n": 3,
+        "text": "No. I wouldn't live in a smart home for any price. I'd say the same to someone who'd paid £300,000 for one in that new development by the canal. The house claims to look after you. What it actually does is listen, and then argue. You walk in at 11 p.m. after a quiet evening, and the hall light dims like a church candle being put out by a verger. The heating checks your calendar, finds a meeting you didn't know about, and steams the kitchen until it feels like a dentist's waiting room on a wet Tuesday. The fridge judges what you eat.\n\nNothing works unless the internet agrees. The internet in my road behaves like a grumpy farmer who has locked the gate and gone to bed. You ask for tea and the kettle wants an update. It takes longer than boiling a pan over a camp stove in the garden. Every appliance has an opinion. None is as warm as a plain switch you can press in the dark. The locks remember visitors, the curtains schedule their own opening, the smoke alarm keeps telling you it's fine. By Friday you are not living in a house. You are negotiating with a committee of gadgets that have never met you.\n\nPeople say it's convenient, and a tap that knows your face would save reaching for a knob. But it also knows when you get up for water at 3 a.m., and reports that back to everything else. I'd rather have a house that ignores me. Mind you, my current one does exactly that.",
+        "violations": [],
+        "fixes": [
+          "'The promise is that the house looks after you, but what it actually does is listen, and then argue.' -> 'The house claims to look after you. What it actually does is listen, and then argue.'",
+          "'The heating checks your calendar, finds a meeting you didn't know about, and raises the temperature until the kitchen is as steamy as a dentist's waiting room on a wet Tuesday.' -> 'The heating checks your calendar, finds a meeting you didn't know about, and steams the kitchen until it feels like a dentist's waiting room on a wet Tuesday.'",
+          "'which takes longer than making the tea by hand, boiling it over a camp stove in the garden' -> 'It takes longer than boiling a pan over a camp stove in the garden.'",
+          "'You walk through the door at 11 p.m. after a quiet evening, and the hall light thinks you ought to be relaxed, so it dims like a church candle being put out by a verger.' -> 'You walk in at 11 p.m. after a quiet evening, and the hall light dims like a church candle being put out by a verger.'",
+          "Added short beats: 'The fridge judges what you eat.'; 'Every appliance has an opinion.'; 'By Friday you are not living in a house.'"
+        ]
+      },
+      {
+        "n": 4,
+        "text": "No. I wouldn't live in a smart home for any price. I'd say the same to someone who'd paid £300,000 for one in that new development by the canal. The house claims to look after you. It listens. Then it argues. You walk in at 11 p.m. after a quiet evening, and the hall light dims like a church candle being put out by a verger. The heating checks your calendar, finds a meeting you didn't know about, and steams the kitchen until it feels like a dentist's waiting room on a wet Tuesday. The fridge judges what you eat.\n\nNothing works unless the internet agrees. The internet in my road behaves like a grumpy farmer who has locked the gate and gone to bed. You ask for tea and the kettle wants an update. It takes longer than boiling a pan over a camp stove in the garden. Every appliance has an opinion. None is as warm as a plain switch you can press in the dark. The locks remember visitors, the curtains schedule their own opening, the smoke alarm keeps telling you it's fine. By Friday you are not living in a house. You are negotiating with a committee of gadgets that have never met you.\n\nPeople say it's convenient, and a tap that knows your face would save reaching for a knob. But it also knows when you get up for water at 3 a.m., and reports that back to everything else. I'd rather have a house that ignores me. Mind you, my current one does exactly that.",
+        "violations": [
+          "wordcount=265, still 15 over the 250 ceiling (measured on round three text).",
+          "Similar-length run sentences 4-6, lengths 7,9,6: 'What it actually does is listen, and then argue.'; 'You walk in at 11 p.m. after a quiet evening, and the hall light dims...'; 'The heating checks your calendar...' — rule never three consecutive sentences within 3 words.",
+          "Median 10 words, below the ~14 target; too many two- and three-word fragments crowding the middle of the piece."
+        ],
+        "fixes": [
+          "'What it actually does is listen, and then argue.' -> 'It listens. Then it argues.' (two short beats breaking the 7/9/6 run)"
+        ]
+      },
+      {
+        "n": 5,
+        "text": "No. I wouldn't live in a smart home for any price. I'd say the same to anyone paying £300,000 for one by the canal. The house claims to look after you. It listens. Then it argues. You walk in at 11 p.m., and the hall light dims like a church candle being put out by a verger. The heating checks your calendar, finds a meeting you didn't know about, and steams the kitchen like a dentist's waiting room on a wet Tuesday. The fridge judges what you eat.\n\nNothing works unless the internet agrees. The internet in my road behaves like a grumpy farmer who has locked the gate and gone to bed. You ask for tea and the kettle wants an update. It takes longer than boiling a pan on the garden stove. Every appliance has an opinion. None is as warm as a plain switch you can press in the dark. The locks remember visitors, the curtains schedule their own opening, the smoke alarm keeps telling you it's fine. By Friday you are not living in a house. You are negotiating with a committee of gadgets that have never met you.\n\nPeople say it's convenient, and a tap that knows your face would save reaching for a knob. But it also knows when you get up for water at 3 a.m., and reports that back to everything else. I'd rather have a house that ignores me. Mind you, my current one does exactly that.",
+        "violations": [
+          "wordcount=261, still 11 over the ceiling (measured on round four text).",
+          "Dead weight: 'You walk in at 11 p.m. after a quiet evening, and the hall light dims...' — 'after a quiet evening' carries no checkable detail.",
+          "28-word sentence 'The heating checks your calendar, finds a meeting you didn't know about, and steams the kitchen until it feels like a dentist's waiting room on a wet Tuesday.' still over-long."
+        ],
+        "fixes": [
+          "'I'd say the same to someone who'd paid £300,000 for one in that new development by the canal.' -> 'I'd say the same to anyone paying £300,000 for one by the canal.'",
+          "'You walk in at 11 p.m. after a quiet evening, and the hall light dims...' -> 'You walk in at 11 p.m., and the hall light dims...'",
+          "'...steams the kitchen until it feels like a dentist's waiting room on a wet Tuesday.' -> '...steams the kitchen like a dentist's waiting room on a wet Tuesday.'",
+          "'It takes longer than boiling a pan over a camp stove in the garden.' -> 'It takes longer than boiling a pan on the garden stove.'"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "Are standing desks a con?",
+    "final": "It looks like a thoroughly sensible idea on paper, though. After one miserable afternoon perched on one at 4 p.m. in an office near Paddington, I'd call the whole thing a con. The salesman tells you standing fixes sitting. It doesn't. The desk doesn't care whether you are comfortable. It rises on two thin legs like a metal filing cabinet teetering on two dodgy castors. After twenty minutes your knees start talking, as they never do at dinner. You lean on it, shift your weight, rest an elbow on the corner, and the top wobbles, creaks, threatens to drop your laptop in the bin.\n\nA whole cottage industry grew up around it. People buy mats to stand on, like dental surgery carpet. They buy stools to perch on when the standing gets too loud. They buy books on how to stand, as if nobody had stood before desks arrived. A good one costs £800. For that money you could have two ordinary chairs and a long lunch. Then the desk stares at you while you type. You stare back. Neither of you is enjoying yourselves.\n\nThe body was not built to hold one rigid position, sitting or balancing on a plank. I keep coming back to the desk in my study, four feet high, with a plain wooden top. The standing desk went back after that afternoon. I still wanted the tall one afterwards.",
+    "rounds": [
+      {
+        "n": 1,
+        "text": "I have never really seen the appeal of a standing desk, and after one miserable afternoon perched on one at 4 p.m. in an office near Paddington, I'd call the whole thing a con. The salesman's idea is that standing fixes sitting, the way a hair shirt fixes a lazy Sunday. But the desk doesn't care whether you are comfortable. It rises on two thin legs like a farmhand balancing on a fence post, and after twenty minutes your knees begin to talk to you in a way they never did at dinner. You lean on it, you shift your weight, you rest one elbow on the corner, and the whole thing rocks like a rowing boat that has lost its oars.\n\nThere is a whole cottage industry around the thing. People buy anti-fatigue mats for under it, which look like the carpet in a dental surgery. They buy stools to perch on when the standing gets too loud. They buy books telling them how to stand, as if nobody had ever stood before the desk arrived. A good one costs £800, and for that money you could have had two ordinary chairs and a long lunch. Then the desk stares at you while you type, and you stare back, and neither of you is enjoying yourselves.\n\nThe human body was not designed to hold one rigid position, whether that position is sitting or balancing on a plank. I keep coming back to the desk in the corner of my study, which is four feet high and has always had a plain wooden top. The standing desk went back after the afternoon. Even my back preferred the chair.",
+        "violations": [],
+        "fixes": []
+      },
+      {
+        "n": 2,
+        "text": "I have never really seen the appeal of a standing desk, and after one miserable afternoon perched on one at 4 p.m. in an office near Paddington, I'd call the whole thing a con. The salesman's idea is that standing fixes sitting, the way a hair shirt fixes a lazy Sunday. But the desk doesn't care whether you are comfortable. It rises on two thin legs like a farmhand balancing on a fence post, and after twenty minutes your knees begin to talk to you in a way they never did at dinner. You lean on it, you shift your weight, you rest one elbow on the corner, and the whole thing rocks like a rowing boat that has lost its oars.\n\nThere is a whole cottage industry around the thing. People buy anti-fatigue mats for under it, which look like the carpet in a dental surgery. They buy stools to perch on when the standing gets too loud. They buy books telling them how to stand, as if nobody had ever stood before the desk arrived. A good one costs £800, and for that money you could have had two ordinary chairs and a long lunch. Then the desk stares at you while you type, and you stare back, and neither of you is enjoying yourselves.\n\nThe human body was not designed to hold one rigid position, whether that position is sitting or balancing on a plank. I keep coming back to the desk in the corner of my study, which is four feet high and has always had a plain wooden top. The standing desk went back after the afternoon. Even my back preferred the chair.",
+        "violations": [
+          "wordcount=278, 28 over the 250 ceiling.",
+          "Short-sentence share 2 of 16 at 8 words or fewer (12.5%), rule at least a quarter.",
+          "No sentence at four words or fewer; rule one sentence of four words or fewer per 100 words.",
+          "Similar run sentences 10-13, lengths 18,20,20,21: 'A good one costs £800, and for that money you could have had two ordinary chairs and a long lunch.'; 'Then the desk stares at you while you type, and you stare back, and neither of you is enjoying yourselves.'; 'The human body was not designed to hold one rigid position, whether that position is sitting or balancing on a plank.'",
+          "Closer 'Even my back preferred the chair.' confirms the verdict instead of undercutting it; do_rules require the last sentence to undercut your own answer or the reader, under 15 words.",
+          "Opener 22 words merges premise and verdict: 'I have never really seen the appeal of a standing desk, and after one miserable afternoon perched on one at 4 p.m. in an office near Paddington, I'd call the whole thing a con.'"
+        ],
+        "fixes": []
+      },
+      {
+        "n": 3,
+        "text": "I have never really seen the appeal of a standing desk. After one miserable afternoon perched on one at 4 p.m. in an office near Paddington, I'd call the whole thing a con. The salesman thinks standing fixes sitting, the way a hair shirt fixes a lazy Sunday. The desk doesn't care whether you are comfortable. It rises on two thin legs like a farmhand balancing on a fence post. After twenty minutes your knees begin to talk to you, the way they never did at dinner. You lean on it, you shift your weight, you rest an elbow on the corner. The whole thing rocks like a rowing boat that has lost its oars.\n\nA whole cottage industry has grown up around it. People buy mats to stand on, which look like the carpet in a dental surgery. They buy stools to perch on when the standing gets too loud. They buy books explaining how to stand, as if nobody had stood before the desk arrived. A good one costs £800. For that money you could have two ordinary chairs and a long lunch. Then the desk stares at you while you type. You stare back. Neither of you is enjoying yourselves.\n\nThe body was not built to hold one rigid position, sitting or balancing on a plank. I keep coming back to the desk in my study, four feet high, with a plain wooden top. The standing desk went back after that afternoon. I still wanted the tall one afterwards.",
+        "violations": [],
+        "fixes": [
+          "Split opener: 'I have never really seen the appeal of a standing desk, and after one miserable afternoon...' -> 'I have never really seen the appeal of a standing desk. After one miserable afternoon perched on one at 4 p.m. in an office near Paddington, I'd call the whole thing a con.'",
+          "Broke the long middle run: 'A good one costs £800, and for that money you could have had two ordinary chairs and a long lunch.' -> 'A good one costs £800. For that money you could have two ordinary chairs and a long lunch.'",
+          "Added short beats: 'The desk doesn't care whether you are comfortable.'; 'You stare back.'",
+          "Reworked closer to undercut: 'Even my back preferred the chair.' -> 'I still wanted the tall one afterwards.'"
+        ]
+      },
+      {
+        "n": 4,
+        "text": "I have never really seen the appeal of a standing desk. After one miserable afternoon perched on one at 4 p.m. in an office near Paddington, I'd call the whole thing a con. The salesman tells you standing fixes sitting. It doesn't. The desk doesn't care whether you are comfortable. It rises on two thin legs like a farmhand balancing on a fence post. After twenty minutes your knees start talking, as they never do at dinner. You lean on it, shift your weight, rest an elbow on the corner, and the top wobbles, creaks, threatens to drop your laptop in the bin.\n\nA whole cottage industry has grown up around the standing fad. People buy mats to stand on, which look like the carpet in a dental surgery. They buy stools to perch on when the standing gets too loud. They buy books on how to stand, as if nobody had stood before desks arrived. A good one costs £800. For that money you could have two ordinary chairs and a long lunch. Then the desk stares at you while you type. You stare back. Neither of you is enjoying yourselves.\n\nThe body was not built to hold one rigid position, sitting or balancing on a plank. I keep coming back to the desk in my study, four feet high, with a plain wooden top. The standing desk went back after that afternoon. I still wanted the tall one afterwards.",
+        "violations": [
+          "wordcount=252, still 2 over the ceiling (measured on round three text).",
+          "Same-device repetition in paragraph one: three like-similes stacked — 'the way a hair shirt fixes a lazy Sunday', 'like a farmhand balancing on a fence post', 'rocks like a rowing boat that has lost its oars'; rule never the same signature device twice in one piece.",
+          "Similar run sentences 1-3, lengths 11,10,12, and sentences 6-8, lengths 14,17,15."
+        ],
+        "fixes": [
+          "'The salesman's idea is that standing fixes sitting, the way a hair shirt fixes a lazy Sunday.' -> 'The salesman tells you standing fixes sitting. It doesn't.'",
+          "'the whole thing rocks like a rowing boat that has lost its oars' -> 'the top wobbles, creaks, threatens to drop your laptop in the bin' (three-item list with an absurd third item, replacing the simile)",
+          "'After twenty minutes your knees begin to talk to you, the way they never did at dinner.' -> 'After twenty minutes your knees start talking, as they never do at dinner.'",
+          "'They buy books explaining how to stand, as if nobody had stood before the desk arrived.' -> 'They buy books on how to stand, as if nobody had stood before desks arrived.'"
+        ]
+      },
+      {
+        "n": 5,
+        "text": "It looks like a thoroughly sensible idea on paper, though. After one miserable afternoon perched on one at 4 p.m. in an office near Paddington, I'd call the whole thing a con. The salesman tells you standing fixes sitting. It doesn't. The desk doesn't care whether you are comfortable. It rises on two thin legs like a metal filing cabinet teetering on two dodgy castors. After twenty minutes your knees start talking, as they never do at dinner. You lean on it, shift your weight, rest an elbow on the corner, and the top wobbles, creaks, threatens to drop your laptop in the bin.\n\nA whole cottage industry grew up around it. People buy mats to stand on, like dental surgery carpet. They buy stools to perch on when the standing gets too loud. They buy books on how to stand, as if nobody had stood before desks arrived. A good one costs £800. For that money you could have two ordinary chairs and a long lunch. Then the desk stares at you while you type. You stare back. Neither of you is enjoying yourselves.\n\nThe body was not built to hold one rigid position, sitting or balancing on a plank. I keep coming back to the desk in my study, four feet high, with a plain wooden top. The standing desk went back after that afternoon. I still wanted the tall one afterwards.",
+        "violations": [
+          "wordcount=241, in range, but similar run sentences 10-12, lengths 15,12,15: 'People buy mats to stand on, which look like the carpet in a dental surgery.'; 'They buy stools to perch on when the standing gets too loud.'; 'They buy books on how to stand...'",
+          "Similar run sentences 1-3, lengths 11,10,12 after normalising the p.m. boundary.",
+          "Cross-piece opener duplication: 'I have never really seen the appeal of a standing desk.' is the negative-autobiography 'I have never...' opener shared by three pieces; the opener must become a distinct type while the verdict still arrives inside two sentences.",
+          "Cross-piece imagery duplication: 'It rises on two thin legs like a farmhand balancing on a fence post.' reuses the farmhand/farm hand occupational image already used in another piece; swap the comparison to a small-machinery domain while keeping the two thin legs and unstable physical feel."
+        ],
+        "fixes": [
+          "'People buy mats to stand on, which look like the carpet in a dental surgery.' -> 'People buy mats to stand on, like dental surgery carpet.' (15 to 10 words)",
+          "'A whole cottage industry has grown up around the standing fad.' -> 'A whole cottage industry grew up around it.' (11 to 8 words)",
+          "'I have never really seen the appeal of a standing desk.' -> 'It looks like a thoroughly sensible idea on paper, though.' (concessive fragment opener; verdict stays in the following sentence 'After one miserable afternoon perched on one at 4 p.m. in an office near Paddington, I'd call the whole thing a con.')",
+          "'It rises on two thin legs like a farmhand balancing on a fence post.' -> 'It rises on two thin legs like a metal filing cabinet teetering on two dodgy castors.'"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "What should I do about a colleague who reheats fish in the office microwave?",
+    "final": "You do nothing polite. Tell him straight, or the room will never recover. At 12.15 on a Tuesday he opens the microwave door in our canteen, slides in a tub of kippers and sets the plate turning. The rest of us finish a report about invoices. The smell climbs the walls like a plumber who has missed his bus, wet and determined, and settles on the ceiling tiles until closing time. Nobody says a word. That is the trouble.\n\nLast month he left a smoked mackerel for four minutes at 12.30. By 12.35 the floor by the photocopier carried a harbour wall after a storm, all salt and wet fish. People from marketing wandered in holding their nose. Our client, over sandwiches, asked whether the building had flooded. We laughed it off. Now I keep biscuits and a knife in my drawer. Not a healthy way to live. The smell lives in the plastic hinges and comes out with every mug of tea.\n\nWe could write him a rule. No fish between 11.30 and 2.15, a 50p fine per sardine, a box beside the kettle for cold lunches. But none of that works on a man who heats sardines next to your plastic lunch box. The office keeps its photocopier and its broken chair. And one trawler-deck of a colleague. I would buy my lunch from the high street shop at £4.20 every day, to avoid that room. Though the fish-eater is probably right.",
+    "rounds": [
+      {
+        "n": 1,
+        "text": "You do nothing polite. The fish is not a cooking problem, it is a small war fought in the canteen at 12.15 on a Tuesday. Every weekday this colleague opens that same microwave door, slides in a plastic tub of kippers or trout, and sets the machine going while the rest of us try to finish a report about invoices. The smell climbs the walls like a plumber who has missed his bus, wet and determined, and settles on the ceiling tiles for the rest of the afternoon.\n\nLast month someone left a smoked mackerel in there for four minutes at 12.30, and by 12.35 the floor by the photocopier smelled like a harbour wall after a storm. People wandered in from marketing holding their nose, and the client we were hosting over sandwiches asked whether the building had been flooded. We laughed it off at the time. Now I keep a tin of biscuits and a knife in my drawer, which is not a healthy way to live. The smell does not leave when the door closes, it lives in the plastic hinges and comes out again every time anyone warms up a mug of tea.\n\nThe honest answer is that you should say something, quietly, before the thing escalates into a formal complaint or a notice pinned to the staff board. You could suggest a rule, a half-hour window after lunch, a box for cold food only. But none of that works on a man who heats sardines next to your Tupperware. I sometimes think I would buy my lunch from the sandwich shop on the high street at £4.20 every day, just to stay out of that room. Though the fish-eater is probably right.",
+        "violations": [],
+        "fixes": []
+      },
+      {
+        "n": 2,
+        "text": "You do nothing polite. Tell him straight, or the room will never recover. At 12.15 on a Tuesday he opens the microwave door in our canteen, slides in a plastic tub of kippers, and sets the plate turning while the rest of us try to finish a report about invoices. The smell climbs the walls like a plumber who has missed his bus, wet and determined, and settles on the ceiling tiles until closing time. Nobody says a word. That is the trouble.\n\nLast month he left a smoked mackerel in there for four minutes at 12.30, and by 12.35 the floor by the photocopier was thick with a harbour wall after a storm. People wandered in from marketing holding their nose, and the client we were hosting over sandwiches asked whether the building had been flooded. We laughed it off. Now I keep a tin of biscuits and a knife in my drawer, which is not a healthy way to live. The smell lives in the plastic hinges, and it comes out again every time anyone warms up a mug of tea.\n\nWe could write him a proper rule. No fish between 11.30 and 2.15, a fine of 50p for every sardine, a box kept beside the kettle for lunches that do not travel. But none of that works on a man who heats sardines next to your Tupperware. The office has its old photocopier, its broken chair, its one trawler-deck of a colleague who smells of the sea. I sometimes think I would buy my lunch from the sandwich shop on the high street at £4.20 every day, just to stay out of that room. Though the fish-eater is probably right.",
+        "violations": [
+          "wordcount=287，超出 190-250 长度区间（do_rules: 220±30）",
+          "句长中位数 21，rhythm_rules 要求中位数约 14；长句 'Every weekday this colleague opens that same microwave door, slides in a plastic tub of kippers or trout, and sets the machine going while the rest of us try to finish a report about invoices.' 35 词",
+          "短句配额不足：14 句中仅 3 句 ≤8 词（21%），低于至少 1/4；≤4 词仅 1 句，按每 100 词一句 ≤4 的规则，287 词应约 3 句",
+          "明喻装置重复：'like a plumber who has missed his bus' 与 'smelled like a harbour wall after a storm' 同为明喻，违反 do_rules 'Never the same signature device twice in one piece'",
+          "三物清单第三项未加码：'a rule, a half-hour window after lunch, a box for cold food only' 第三项仍是普通物件，清单装置要求第三项滑向不可能的具体物",
+          "荒诞比较密度 2/287≈0.7/100，低于每 100 词至少 1 个"
+        ],
+        "fixes": [
+          "拆 35 词长句：'Every weekday this colleague opens...' → 'At 12.15 on a Tuesday he opens the microwave door in our canteen.' 加 'He slides in a plastic tub of kippers and sets the plate turning.'",
+          "明喻去重：'smelled like a harbour wall after a storm' → 暗喻 'was thick with a harbour wall after a storm'",
+          "另起三物加码清单：'old photocopier, broken chair, trawler-deck of a colleague'，第三项为不可能的人化物",
+          "补 ≤8 词短句：'Nobody says a word.' 'That is the trouble.' 'We laughed it off.'",
+          "复测 wordcount=283（仍超标，下一轮继续）"
+        ]
+      },
+      {
+        "n": 3,
+        "text": "You do nothing polite. Tell him straight, or the room will never recover. At 12.15 on a Tuesday he opens the microwave door in our canteen. He slides in a plastic tub of kippers and sets the plate turning. The rest of us try to finish a report about invoices. The smell climbs the walls like a plumber who has missed his bus, wet and determined, and settles on the ceiling tiles until closing time. Nobody says a word. That is the trouble.\n\nLast month he left a smoked mackerel in there for four minutes at 12.30. By 12.35 the floor by the photocopier carried a harbour wall after a storm, all salt and wet fish. People wandered in from marketing holding their nose, and the client we were hosting over sandwiches asked whether the building had been flooded. We laughed it off. Now I keep a tin of biscuits and a knife in my drawer, which is not a healthy way to live. The smell lives in the plastic hinges, and comes out again every time anyone warms up a mug of tea.\n\nWe could write him a proper rule. No fish between 11.30 and 2.15, a fine of 50p for every sardine, a box kept beside the kettle for lunches that do not travel. But none of that works on a man who heats sardines next to your Tupperware. The office has its old photocopier, its broken chair, its one trawler-deck of a colleague. I sometimes think I would buy my lunch from the sandwich shop on the high street at £4.20 every day, just to stay out of that room. Though the fish-eater is probably right.",
+        "violations": [
+          "wordcount=283 仍超 250 上限",
+          "中位数 20 仍高于 14；'At 12.15 on a Tuesday he opens the microwave door in our canteen, slides in a plastic tub of kippers...' 37 词、'Last month he left a smoked mackerel in there for four minutes at 12.30...' 31 词",
+          "搭配落空：'the floor by the photocopier was thick with a harbour wall after a storm' 中 thick with 应接气味而非墙体，物理意象不通",
+          "P1 三连近长句 13/13/11：'At 12.15...' / 'He slides in...' / 'The rest of us...'，违反 rhythm 'never three consecutive sentences within 3 words'"
+        ],
+        "fixes": [
+          "'was thick with a harbour wall after a storm' → 'carried a harbour wall after a storm, all salt and wet fish'",
+          "合并 'He slides in...' 入前句，打散三连长度",
+          "继续删削修饰词；复测 wordcount=279（仍超标）"
+        ]
+      },
+      {
+        "n": 4,
+        "text": "You do nothing polite. Tell him straight, or the room will never recover. At 12.15 on a Tuesday he opens the microwave door in our canteen, slides in a tub of kippers and sets the plate turning. The rest of us finish a report about invoices. The smell climbs the walls like a plumber who has missed his bus, wet and determined, and settles on the ceiling tiles until closing time. Nobody says a word. That is the trouble.\n\nLast month he left a smoked mackerel in there for four minutes at 12.30. By 12.35 the floor by the photocopier carried a harbour wall after a storm, all salt and wet fish. People from marketing wandered in holding their nose. Our client, over sandwiches, asked whether the building had flooded. We laughed it off. Now I keep biscuits and a knife in my drawer. Not a healthy way to live. The smell lives in the plastic hinges and comes out with every mug of tea.\n\nWe could write him a proper rule. No fish between 11.30 and 2.15, a 50p fine per sardine, a box beside the kettle for cold lunches. But none of that works on a man who heats sardines next to your Tupperware. The office has its old photocopier, its broken chair, its one trawler-deck of a colleague. I would buy my lunch from the high street shop at £4.20 every day, just to avoid that room. Though the fish-eater is probably right.",
+        "violations": [
+          "wordcount=279 仍超 250",
+          "P2 长句堆叠：'People wandered in from marketing holding their nose, and the client we were hosting over sandwiches asked whether the building had been flooded.' 22 词；'Now I keep a tin of biscuits and a knife in my drawer, which is not a healthy way to live.' 21 词",
+          "P3 提议句 25 词偏长：'I sometimes think I would buy my lunch from the sandwich shop on the high street at £4.20 every day, just to stay out of that room.'"
+        ],
+        "fixes": [
+          "22 词句拆开：'People from marketing wandered in holding their nose.' 加 'Our client, over sandwiches, asked whether the building had flooded.'",
+          "21 词句拆为：'Now I keep biscuits and a knife in my drawer.' 加 'Not a healthy way to live.'",
+          "提议压缩为 mock-regulation 清单：'No fish between 11.30 and 2.15, a 50p fine per sardine, a box beside the kettle for cold lunches'",
+          "复测 wordcount=246"
+        ]
+      },
+      {
+        "n": 5,
+        "text": "You do nothing polite. Tell him straight, or the room will never recover. At 12.15 on a Tuesday he opens the microwave door in our canteen, slides in a tub of kippers and sets the plate turning. The rest of us finish a report about invoices. The smell climbs the walls like a plumber who has missed his bus, wet and determined, and settles on the ceiling tiles until closing time. Nobody says a word. That is the trouble.\n\nLast month he left a smoked mackerel for four minutes at 12.30. By 12.35 the floor by the photocopier carried a harbour wall after a storm, all salt and wet fish. People from marketing wandered in holding their nose. Our client, over sandwiches, asked whether the building had flooded. We laughed it off. Now I keep biscuits and a knife in my drawer. Not a healthy way to live. The smell lives in the plastic hinges and comes out with every mug of tea.\n\nWe could write him a rule. No fish between 11.30 and 2.15, a 50p fine per sardine, a box beside the kettle for cold lunches. But none of that works on a man who heats sardines next to your plastic lunch box. The office keeps its photocopier and its broken chair. And one trawler-deck of a colleague. I would buy my lunch from the high street shop at £4.20 every day, to avoid that room. Though the fish-eater is probably right.",
+        "violations": [
+          "'next to your Tupperware' 中 Tupperware 为美国品牌名，违反 'Never cite American shops, brands or testing labs'",
+          "P3 三连近长句 19/17/15：'But none of that works on a man who heats sardines next to your Tupperware.' / 'The office has its old photocopier, its broken chair, its one trawler-deck of a colleague.' / 'I would buy my lunch from the high street shop at £4.20 every day, just to avoid that room.'"
+        ],
+        "fixes": [
+          "'your Tupperware' → 'your plastic lunch box'",
+          "17 词清单句拆为 'The office keeps its old photocopier and its broken chair.' 与 'And one trawler-deck of a colleague.'",
+          "复测 wordcount=249，段落 3，问句 0，末句 6 词",
+          "删词对照：'a proper rule' → 'a rule'（删 proper）；'left a smoked mackerel in there for' → 'left a smoked mackerel for'（删 in there）；'its old photocopier' → 'its photocopier'（删 old）；'just to avoid that room' → 'to avoid that room'（删 just）；wordcount=244"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "Is it worth learning to drive a manual car in 2026?",
+    "final": "The forecourt at the test centre glows with brake dust and cold rain. In 2026 there is no point learning a manual, unless you want a hobby that bites back. Most new cars arrive with two pedals. The second-hand manual you practise on costs £1,800, sits outside in the rain, and refuses to start on the fourth try. It grinds like a seized filing drawer. You spend forty hours in a car park at 8pm, stalling at the white lines. The instructor keeps his hand on the handbrake. For what?\n\nThe clutch is a small animal with opinions of its own. It takes up between your left knee and the edge of the world. It kills your progress in town traffic until you read it like a priest reading a bad sermon. People tell you manuals give you more control. Control is the problem. Nobody wants to sit in a queue on the A12 and work a pedal while the radio plays. A manual keeps your left foot busy. It suits a 1998 farm hand, not an office worker in Ipswich.\n\nStill, I passed my test in 2004 and never owned a car that needed the skill. The certificate sits in a drawer next to my swimming badge. You would be better off learning to reverse a caravan, or to mend a tap. What about all those Sunday drivers in the Cotswolds? They manage on one pedal. Though I would still miss the stall.",
+    "rounds": [
+      {
+        "n": 1,
+        "text": "I have never understood the devotion to a gear stick. In 2026 there is no point learning to drive a manual, unless you want a hobby that bites back. Most new cars sold in this country arrive with two pedals now, and the second-hand manual you would practise on costs about £1,800, sits outside in the rain, and refuses to start on the fourth try. You spend forty hours in a car park at 8pm, stalling at the white lines, while the instructor from the driving school keeps his hand on the handbrake.\n\nThe clutch is a small animal with opinions of its own. It takes up at a point somewhere between your left knee and the edge of the world, and it will kill your progress in town traffic until you learn to read it like a priest reading a bad sermon. People tell you manuals give you more control, as if control were the whole problem, as if nobody wanted to sit in a queue on the A12 and listen to the radio instead. A manual also keeps your left foot busy, which is useful if you dream of working on a farm in 1998 and not in an office in Ipswich.\n\nStill, I passed my manual test in 2004 and I have never owned a car that needed the skill afterwards. The learning takes about six months of evenings, the pedals wear out on a hire car, and the certificate sits in a drawer next to my old swimming badge. You would be better off learning to reverse a caravan, or to mend a tap. Though I would still miss the stall.",
+        "violations": [],
+        "fixes": []
+      },
+      {
+        "n": 2,
+        "text": "I have never understood the devotion to a gear stick. In 2026 there is no point learning one, unless you want a hobby that bites back. Most new cars sold in this country arrive with two pedals now. The second-hand manual you would practise on costs about £1,800, sits outside in the rain, and refuses to start on the fourth try. You spend forty hours in a car park at 8pm, stalling at the white lines, while the instructor from the driving school keeps his hand on the handbrake. For what, exactly?\n\nThe clutch is a small animal with opinions of its own. It takes up at a point somewhere between your left knee and the edge of the world, and it will kill your progress in town traffic until you read it like a priest reads a bad sermon. People tell you manuals give you more control. Control is the whole problem. Nobody wants to sit in a queue on the A12 and work a pedal while the radio plays. A manual keeps your left foot busy, which suits a farm hand from 1998, not someone working in an office in Ipswich.\n\nStill, I passed my manual test in 2004 and I have never owned a car that needed the skill afterwards. The certificate sits in a drawer next to my old swimming badge. You would be better off learning to reverse a caravan, or to mend a tap. What about all those Sunday drivers in the Cotswolds? They manage on one pedal. Though I would still miss the stall.",
+        "violations": [
+          "wordcount=275 超 250",
+          "中位数 20 高于 14；'Most new cars sold in this country arrive with two pedals now, and the second-hand manual you would practise on costs about £1,800...' 36 词；'It takes up at a point somewhere between your left knee...' 39 词",
+          "短句配额：12 句仅 1 句 ≤8 词（8%），低于 1/4；全文无 ≤4 词句子，违反每 100 词至少一句 ≤4 词",
+          "连接装置同句重复：'as if control were the whole problem, as if nobody wanted to sit in a queue...' 两个 as if 叠用",
+          "比较密度 2/275≈0.73/100，低于每 100 词 1 个"
+        ],
+        "fixes": [
+          "39 词长句拆为 'It takes up somewhere between your left knee and the edge of the world.' 与 'It kills your progress...'",
+          "去重 as if：删第二个 as if，改 'Nobody wants to sit in a queue on the A12 and work a pedal while the radio plays.'",
+          "补短句：'Control is the whole problem.' 'For what, exactly?'",
+          "补荒诞比较：'The clutch is a small animal with opinions of its own.'",
+          "复测 wordcount=261"
+        ]
+      },
+      {
+        "n": 3,
+        "text": "I have never understood the devotion to a gear stick. In 2026 there is no point learning one, unless you want a hobby that bites back. Most new cars sold in this country arrive with two pedals now. The second-hand manual you would practise on costs about £1,800, sits outside in the rain, and refuses to start on the fourth try with a sound like a vicar being asked to sing. You spend forty hours in a car park at 8pm, stalling at the white lines. The instructor keeps his hand on the handbrake. For what, exactly?\n\nThe clutch is a small animal with opinions of its own. It takes up somewhere between your left knee and the edge of the world. It will kill your progress in town traffic until you read it like a priest reads a bad sermon. People tell you manuals give you more control. Control is the whole problem. Nobody wants to sit in a queue on the A12 and work a pedal while the radio plays. A manual keeps your left foot busy. It suits a farm hand from 1998, not someone working in an office in Ipswich.\n\nStill, I passed my manual test in 2004 and I have never owned a car that needed the skill afterwards. The certificate sits in a drawer next to my old swimming badge. You would be better off learning to reverse a caravan, or to mend a tap. What about all those Sunday drivers in the Cotswolds? They manage on one pedal. It was a nice test, though. Though I would still miss the stall.",
+        "violations": [
+          "wordcount=261 仍超 250",
+          "'It takes up at a point somewhere between your left knee and the edge of the world, and it will kill your progress...' 37 词仍过长",
+          "≤4 词仅 1 句，261 词按规则应至少 2-3 句",
+          "比较仍为 2 个（小动物隐喻、牧师明喻），2/261 密度不足"
+        ],
+        "fixes": [
+          "37 词句二次拆分；'Control is the whole problem.' → 'Control is the problem.'（4 词）",
+          "补教会意象比较：启动声 'with a sound like a vicar being asked to sing'",
+          "复测 wordcount=268（补句后反弹，下一轮压回）"
+        ]
+      },
+      {
+        "n": 4,
+        "text": "I have never understood the devotion to a gear stick. In 2026 there is no point learning one, unless you want a hobby that bites back. Most new cars sold in this country arrive with two pedals now. The second-hand manual you practise on costs about £1,800, sits outside in the rain, and refuses to start on the fourth try. It sounds like a vicar being asked to sing. You spend forty hours in a car park at 8pm, stalling at the white lines. The instructor keeps his hand on the handbrake. For what, exactly?\n\nThe clutch is a small animal with opinions of its own. It takes up somewhere between your left knee and the edge of the world. It kills your progress in town traffic until you read it like a priest reading a bad sermon. People tell you manuals give you more control. Control is the problem. Nobody wants to sit in a queue on the A12 and work a pedal while the radio plays. A manual keeps your left foot busy. It suits a 1998 farm hand, not an office worker in Ipswich.\n\nStill, I passed my test in 2004 and never owned a car that needed the skill afterwards. The certificate sits in a drawer next to my old swimming badge. You would be better off learning to reverse a caravan, or to mend a tap. What about all those Sunday drivers in the Cotswolds? They manage on one pedal. Though I would still miss the stall.",
+        "violations": [
+          "wordcount=268 超 250，较上轮反弹",
+          "P1 第 4 句 33 词：'The second-hand manual you would practise on costs about £1,800, sits outside in the rain, and refuses to start on the fourth try with a sound like a vicar being asked to sing.'",
+          "结尾三连近短句 5/6/7：'They manage on one pedal.' / 'It was a nice test, though.' / 'Though I would still miss the stall.'",
+          "明喻家族重复：vicar 与 priest 同为教会人物形象，装置意象撞车"
+        ],
+        "fixes": [
+          "33 词句拆为 '...refuses to start on the fourth try.' 与 'It grinds like a seized filing drawer.'（机械意象，错开牧师明喻）",
+          "删 'It was a nice test, though.'，消除结尾三连",
+          "复测 wordcount=252"
+        ]
+      },
+      {
+        "n": 5,
+        "text": "The forecourt at the test centre glows with brake dust and cold rain. In 2026 there is no point learning a manual, unless you want a hobby that bites back. Most new cars arrive with two pedals. The second-hand manual you practise on costs £1,800, sits outside in the rain, and refuses to start on the fourth try. It grinds like a seized filing drawer. You spend forty hours in a car park at 8pm, stalling at the white lines. The instructor keeps his hand on the handbrake. For what?\n\nThe clutch is a small animal with opinions of its own. It takes up between your left knee and the edge of the world. It kills your progress in town traffic until you read it like a priest reading a bad sermon. People tell you manuals give you more control. Control is the problem. Nobody wants to sit in a queue on the A12 and work a pedal while the radio plays. A manual keeps your left foot busy. It suits a 1998 farm hand, not an office worker in Ipswich.\n\nStill, I passed my test in 2004 and never owned a car that needed the skill. The certificate sits in a drawer next to my swimming badge. You would be better off learning to reverse a caravan, or to mend a tap. What about all those Sunday drivers in the Cotswolds? They manage on one pedal. Though I would still miss the stall.",
+        "violations": [
+          "wordcount=252，高出 250 上限 2 词",
+          "复测其余项：中位数 10、≤8 词 9/22、≤4 词 2、问句 2、3 段，均达标，仅余长度一项",
+          "开头 'I have never understood the devotion to a gear stick.' 属 'I have never...' 自动传记式开场，与本批次另外两篇撞型；按 openers 规则需换成本篇独有的场景先行开头，且两句话内给出判断"
+        ],
+        "fixes": [
+          "'Most new cars sold in this country arrive with two pedals now.' → 'Most new cars now arrive with two pedals.'（砍 4 词）",
+          "复测 wordcount=246，末句 7 词",
+          "'I have never understood the devotion to a gear stick.' → 'The forecourt at the test centre glows with brake dust and cold rain.'；'learning one' → 'learning a manual'",
+          "删词对照：'costs about £1,800' → 'costs £1,800'（删 about）；'takes up somewhere between' → 'takes up between'（删 somewhere）；'needed the skill afterwards' → 'needed the skill'（删 afterwards）；'my old swimming badge' → 'my swimming badge'（删 old）；'For what, exactly?' → 'For what?'（删 exactly）；wordcount=244"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "Should I buy a £4 coffee every morning?",
+    "final": "So you've read the thrifty advice and now you imagine yourself with a cafetiere on the windowsill. I wouldn't. A £4 coffee at 7:20 every morning seems like nothing, and that is the trick it works. Outside the baker's last Tuesday I watched the barista snap the cup lid like a dentist seating a crown on a wobbly molar. The cardboard sleeve went limp where steam curled around it. It cost four pounds. You pay for the warmth mostly. You pay again for the smell, which outdoes the queue.\n\nAcross a year the money does not vanish neatly, it accumulates like damp rising up a party wall. A year of these cups buys a decent bicycle, a month of home-cooked meals, or an enamel roasting dish that outlasts the war. Yet we hand coins over at dawn, half asleep, as though the counter were a tax office we could not argue with. I keep a jar on the shelf now. It sits there like a church collection plate, gathering ten pence and a five pound note. A pot-brewed drink costs sixty pence and tastes, to my tongue, like coffee should. Nobody remarks on it. Nobody queues.\n\nStill, I understand the pull of it. The line moves fast, the cup fits the hand, and ninety seconds there counts as morning. I have my own slipped habits, and a coffee lecturer should buy his own beans first. Next Tuesday I might just join the queue again.",
+    "rounds": [
+      {
+        "n": 1,
+        "text": "So you've read all the thrifty advice and now you imagine yourself with a cafetiere on the kitchen windowsill. I wouldn't. A £4 coffee at 7:20 every morning seems like nothing, and that is precisely the trick it works on you. I stood in that queue outside the baker's on the high street last Tuesday, behind a man in a running jacket who ordered six at once, and I watched the barista yank the plunger like a farmhand heaving a water bucket off a well. The cup steamed so hard the cardboard sleeve went limp around it. It cost four pounds. You pay for the warmth mostly. You pay again for the smell, which is stronger than the queue itself.\n\nAdd it up across a year and the money does not vanish neatly, it accumulates like damp rising up a party wall. There are people running small businesses on less than that. A yearly run of these cups would buy you a decent bicycle, or a month of proper meals cooked at home, or one of those enamel roasting dishes that outlasts the war. Yet we hand the coins over at dawn, still half asleep, as though the counter were a tax office we had no right to argue with. I keep a jar on the shelf now. It sits there like a spare church collection plate, gathering ten pence pieces and the odd five pound note. A morning drink brewed in a pot costs about sixty pence and tastes, to my untrained tongue, like coffee should. Nobody at work remarks on it. Nobody queues.\n\nStill, I understand the pull. The line moves fast, the cup fits the hand, and standing there for ninety seconds counts as part of your day. I have my own slipped habits, and a man who lectures on coffee ought to buy his own beans first. Next Tuesday I might just join the queue again.",
+        "violations": [],
+        "fixes": []
+      },
+      {
+        "n": 2,
+        "text": "So you've read all the thrifty advice and now you imagine yourself with a cafetiere on the kitchen windowsill. I wouldn't. A £4 coffee at 7:20 every morning seems like nothing, and that is precisely the trick it works on you. I stood in that queue outside the baker's on the high street last Tuesday, behind a man in a running jacket who ordered six at once, and I watched the barista yank the plunger like a farmhand heaving a water bucket off a well. The cup steamed so hard the cardboard sleeve went limp around it. It cost four pounds. You pay for the warmth mostly. You pay again for the smell, which is stronger than the queue itself.\n\nAdd it up across a year and the money does not vanish neatly, it accumulates like damp rising up a party wall. There are people running small businesses on less than that. A yearly run of these cups would buy you a decent bicycle, or a month of proper meals cooked at home, or one of those enamel roasting dishes that outlasts the war. Yet we hand the coins over at dawn, still half asleep, as though the counter were a tax office we had no right to argue with. I keep a jar on the shelf now. It sits there like a spare church collection plate, gathering ten pence pieces and the odd five pound note. A morning drink brewed in a pot costs about sixty pence and tastes, to my untrained tongue, like coffee should. Nobody at work remarks on it. Nobody queues.\n\nStill, I understand the pull. The line moves fast, the cup fits the hand, and standing there for ninety seconds counts as part of your day. I have my own slipped habits, and a man who lectures on coffee ought to buy his own beans first. Next Tuesday I might just join the queue again.",
+        "violations": [
+          "wordcount=320，超出长度硬约束 190-250（220±30）。",
+          "句子 'I stood in that queue outside the baker's on the high street last Tuesday, behind a man in a running jacket who ordered six at once, and I watched the barista yank the plunger like a farmhand heaving a water bucket off a well.' 实测 44 词，单句堆叠地点、时间、人物三处细节，偏离中位数 14 词的节奏目标。",
+          "句子 'A yearly run of these cups would buy you a decent bicycle, or a month of proper meals cooked at home, or one of those enamel roasting dishes that outlasts the war.' 32 词，前半句 'A yearly run of these cups would buy you' 冗词偏多。",
+          "第 2 段同段已有三项清单、税务办公室比喻 'as though the counter were a tax office we had no right to argue with'、教堂捐款盘比喻 'like a spare church collection plate' 三件装置，已到同段三件上限，不得再加。",
+          "'ten pences' 复数不规范，违反英式拼写，应为 ten pence pieces。"
+        ],
+        "fixes": [
+          "删去 'on the high street'、'who ordered six at once'、'water'，44 词长句瘦到 23 词左右，词数压进 250 以内。",
+          "'ten pences' → 'ten pence pieces'。",
+          "保留清单、税务比喻、教堂比喻三件装置，该段不再新增装置。"
+        ]
+      },
+      {
+        "n": 3,
+        "text": "So you've read all the thrifty advice and now you imagine yourself with a cafetiere on the windowsill. I wouldn't. A £4 coffee at 7:20 every morning seems like nothing, and that is the trick it works. I stood in the queue outside the baker's last Tuesday and watched the barista yank the plunger like a farmhand heaving a bucket off a well. The cardboard sleeve went limp where the steam curled around it. It cost four pounds. You pay for the warmth mostly. You pay again for the smell, which outdoes the queue itself.\n\nAcross a year the money does not vanish neatly, it accumulates like damp rising up a party wall. A yearly run of these cups would buy a decent bicycle, a month of meals cooked at home, or an enamel roasting dish that outlasts the war. Yet we hand the coins over at dawn, still half asleep, as though the counter were a tax office we had no right to argue with. I keep a jar on the shelf now. It sits there like a spare church collection plate, gathering ten pence pieces and the odd five pound note. A pot-brewed drink costs about sixty pence and tastes, to my untrained tongue, like coffee should. Nobody remarks on it, and nobody queues.\n\nStill, I understand the pull of it. The line moves fast, the cup fits the hand, and ninety seconds there counts as part of your day. I have my own slipped habits, and a man who lectures on coffee ought to buy his own beans first. Next Tuesday I might just join the queue again.",
+        "violations": [
+          "wordcount=271，仍 >250（长度规则 190-250）。",
+          "≤4 词句仅 2 个：'I wouldn't.'（2 词）、'It cost four pounds.'（4 词）；按每 100 词至少一句 ≤4 词，271 词应 ≥3 句，不满足。",
+          "'Nobody remarks on it, and nobody queues.' 与下句 'Still, I understand the pull of it.' 分别 7、7 词相邻等长，与长短交替意图冲突。",
+          "清单句 'A yearly run of these cups would buy a decent bicycle...' 27 词，仍是第二长句，可再瘦。"
+        ],
+        "fixes": [
+          "合并句拆回两句：'Nobody remarks on it. Nobody queues.'（4 词 + 2 词），补一个 ≤4 句并断开相邻等长。",
+          "'A yearly run of these cups would buy...' → 'A year of these cups buys...'，省 3 词。",
+          "全段再削冗词，目标 ≤250。"
+        ]
+      },
+      {
+        "n": 4,
+        "text": "So you've read all the thrifty advice and now you imagine yourself with a cafetiere on the windowsill. I wouldn't. A £4 coffee at 7:20 every morning seems like nothing, and that is the trick it works. I stood outside the baker's last Tuesday and watched the barista yank the plunger like a farmhand heaving a bucket off a well. The cardboard sleeve went limp where the steam curled around it. It cost four pounds. You pay for the warmth mostly. You pay again for the smell, which outdoes the queue itself.\n\nAcross a year the money does not vanish neatly, it accumulates like damp rising up a party wall. A year of these cups would buy a decent bicycle, a month of home-cooked meals, or an enamel roasting dish that outlasts the war. Yet we hand coins over at dawn, half asleep, as though the counter were a tax office we could not argue with. I keep a jar on the shelf now. It sits there like a spare church collection plate, gathering ten pence and the odd five pound note. A pot-brewed drink costs sixty pence and tastes, to my untrained tongue, like coffee should. Nobody remarks on it. Nobody queues.\n\nStill, I understand the pull of it. The line moves fast, the cup fits the hand, and ninety seconds there counts as your morning. I have my own slipped habits, and a coffee lecturer ought to buy his own beans first. Next Tuesday I might just join the queue again.",
+        "violations": [
+          "wordcount=253，仍超 3 词（长度规则 190-250）。",
+          "'The line moves fast, the cup fits the hand, and ninety seconds there counts as your morning.'（17 词）与下句 'I have my own slipped habits, and a coffee lecturer ought to buy his own beans first.'（17 词）相邻等长。",
+          "'It sits there like a spare church collection plate, gathering ten pence and the odd five pound note.'（18 词）中 'the odd' 可删。"
+        ],
+        "fixes": [
+          "'counts as your morning' → 'counts as morning'；'ought to' → 'should'；删 'the odd'；清单句 would buy → buys。wordcount=249。"
+        ]
+      },
+      {
+        "n": 5,
+        "text": "So you've read the thrifty advice and now you imagine yourself with a cafetiere on the windowsill. I wouldn't. A £4 coffee at 7:20 every morning seems like nothing, and that is the trick it works. Outside the baker's last Tuesday I watched the barista snap the cup lid like a dentist seating a crown on a wobbly molar. The cardboard sleeve went limp where steam curled around it. It cost four pounds. You pay for the warmth mostly. You pay again for the smell, which outdoes the queue.\n\nAcross a year the money does not vanish neatly, it accumulates like damp rising up a party wall. A year of these cups buys a decent bicycle, a month of home-cooked meals, or an enamel roasting dish that outlasts the war. Yet we hand coins over at dawn, half asleep, as though the counter were a tax office we could not argue with. I keep a jar on the shelf now. It sits there like a church collection plate, gathering ten pence and a five pound note. A pot-brewed drink costs sixty pence and tastes, to my tongue, like coffee should. Nobody remarks on it. Nobody queues.\n\nStill, I understand the pull of it. The line moves fast, the cup fits the hand, and ninety seconds there counts as morning. I have my own slipped habits, and a coffee lecturer should buy his own beans first. Next Tuesday I might just join the queue again.",
+        "violations": [
+          "句子 'Yet we hand coins over at dawn, half asleep, as though the counter were a tax office we could not argue with.' 22 词，属偏长句，但未触发三句连排或 30 词以上带宽，保留。",
+          "清单句 'A year of these cups buys a decent bicycle, a month of home-cooked meals, or an enamel roasting dish that outlasts the war.' 23 词，第三项为清单装置，与全篇其他装置不重复。",
+          "末句 'Next Tuesday I might just join the queue again.' 9 词，符合 ≤15 词自拆台要求，无残留违规。",
+          "句子 'I stood outside the baker's last Tuesday and watched the barista yank the plunger like a farmhand heaving a bucket off a well.' 两处问题：farmhand 农场比喻与并行稿件 'like a farmhand balancing on a fence post' 撞车；场景自相矛盾——买外带 £4 咖啡却出现法压壶 plunger 拉杆动作，与柜台/打包场景对不上。"
+        ],
+        "fixes": [
+          "原句 'I stood outside the baker's last Tuesday and watched the barista yank the plunger like a farmhand heaving a bucket off a well.' → 新句 'Outside the baker's last Tuesday I watched the barista snap the cup lid like a dentist seating a crown on a wobbly molar.'；动作改为柜台扣杯盖，比喻从农场换到牙科领域，保持物理荒诞具体。",
+          "删词对照：'read all the thrifty advice' → 'read the thrifty advice'（删 all）；'where the steam' → 'where steam'（删 the）；'the queue itself' → 'the queue'（删 itself）；'a spare church collection plate' → 'a church collection plate'（删 spare）；'to my untrained tongue' → 'to my tongue'（删 untrained）。wordcount=244。"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "Are electric scooters a menace?",
+    "final": "Yes, they are, though I once fancied a gentle scooter ride along the canal towpath. You don't hear them coming. That is the trick. They slip up on the pavement at 15 mph, silent as a dustbin lid sliding across a yard, while the rider stares at his screen and his wheel grazes your bag. I nearly lost my ankle last month outside the station. The boy in a hoodie waved an apology, as if that were a form the council could file.\n\nThe machine weighs more than a suitcase and folds on loose hinges, a kitchen chair that has shed its pegs. Its front wheel can turn on its own, it seems, and the rider sits there with the balance of a sparrow on a washing line. I would register every one between 7 and 9 in the morning, fine the dawdlers, and make a pavement rider push it a mile past the school gates. A bicycle rings a bell. A scooter reaches you before you know it, handlebars already brushing your coat. They park them on the railings, on the bus stop bench, on the flower bed where the old man keeps his marrows. Each one looks manageable until the next corner.\n\nStill, I ordered one myself last spring, after seeing a man glide past looking cheerful. It lived in the hall for a week. Then it went back. Perhaps the menace is only me.",
+    "rounds": [
+      {
+        "n": 1,
+        "text": "Yes, they are, and I say that as someone who once thought a scooter would be a pleasant little ride along the canal towpath. They come up behind you on the pavement at 15 mph, silent as a dustbin lid sliding across a yard, and the rider stares at his screen while his wheels graze your shopping bag. I nearly had my ankle knocked loose last month outside the station, by a boy in a hoodie who waved an apology as if that were a document the council could accept.\n\nThe machine itself weighs more than a suitcase and folds like a kitchen chair with loose hinges. Its front wheel can turn on its own, it seems, and the rider has the balance of a sparrow on a washing line. I would licence every one of them between 7 and 9 a.m., fine the slow ones, and make anyone who rides on the pavement push it for a mile past the school gates. At least a bicycle rings a bell. A scooter arrives like a gas leak, quiet enough that you step aside only when the handlebars are already brushing your coat. They park them on the railings, on the bus stop bench, on the edge of the flower bed where the old man keeps his marrows. Each one looks manageable until the next corner.\n\nStill, I did order one myself last spring, once, after seeing a man glide past looking cheerful. It lived in the hall for a week and then went back. Perhaps the menace is only me, misjudging the width of the pavement.",
+        "violations": [],
+        "fixes": []
+      },
+      {
+        "n": 2,
+        "text": "Yes, they are, and I say that as someone who once thought a scooter would be a pleasant little ride along the canal towpath. They come up behind you on the pavement at 15 mph, silent as a dustbin lid sliding across a yard, and the rider stares at his screen while his wheels graze your shopping bag. I nearly had my ankle knocked loose last month outside the station, by a boy in a hoodie who waved an apology as if that were a document the council could accept.\n\nThe machine itself weighs more than a suitcase and folds like a kitchen chair with loose hinges. Its front wheel can turn on its own, it seems, and the rider has the balance of a sparrow on a washing line. I would licence every one of them between 7 and 9 a.m., fine the slow ones, and make anyone who rides on the pavement push it for a mile past the school gates. At least a bicycle rings a bell. A scooter arrives like a gas leak, quiet enough that you step aside only when the handlebars are already brushing your coat. They park them on the railings, on the bus stop bench, on the edge of the flower bed where the old man keeps his marrows. Each one looks manageable until the next corner.\n\nStill, I did order one myself last spring, once, after seeing a man glide past looking cheerful. It lived in the hall for a week and then went back. Perhaps the menace is only me, misjudging the width of the pavement.",
+        "violations": [
+          "wordcount=266 >250（长度规则 190-250）。",
+          "≤8 词句 3/15，约五分之一，低于至少四分之一的节奏规则。",
+          "≤4 词句 0；按每 100 词至少一句 ≤4 词，266 词应 ≥2 句，不满足。",
+          "'I would licence every one of them between 7 and 9 a.m.' 中 'licence' 作动词英式应为 license，且 'a.m.' 缩写自带句点，造成碎句 'm.'；时段写法违规。",
+          "开头三句 24/34/32 词连续偏长，前 100 词内无短句，违反长短交替；句长中位数 17，偏离目标 14。"
+        ],
+        "fixes": [
+          "开篇插入短句 'You don't hear them coming.'（5 词）。",
+          "'licence' → 'register'；'between 7 and 9 a.m.' → 'between 7 and 9 in the morning'，去掉缩写句点。",
+          "削词至 250 以内，提高短句占比，把中位数拉回 14 附近。"
+        ]
+      },
+      {
+        "n": 3,
+        "text": "Yes, they are, though I once fancied a gentle scooter ride along the canal towpath. You don't hear them coming. That is the trick. They slip up behind you on the pavement at 15 mph, silent as a dustbin lid sliding across a yard, while the rider stares at his screen and his wheels graze your shopping bag. I nearly lost my ankle last month outside the station. The boy in a hoodie waved an apology, as if that were a form the council could file.\n\nThe machine weighs more than a suitcase and folds on loose hinges, a kitchen chair that has shed its pegs. Its front wheel can turn on its own, it seems, and the rider sits there with the balance of a sparrow on a washing line. I would register every one between 7 and 9 in the morning, fine the dawdlers, and make any pavement rider push it for a mile past the school gates. A bicycle rings a bell. A scooter reaches you before you know it, handlebars already brushing your coat. They park them on the railings, on the bus stop bench, on the flower bed where the old man keeps his marrows. Each one looks manageable until the next corner.\n\nStill, I ordered one myself last spring, after seeing a man glide past looking cheerful. It lived in the hall for a week. Then it went back. Perhaps the menace is only me.",
+        "violations": [
+          "句子 'They slip up behind you on the pavement at 15 mph, silent as a dustbin lid sliding across a yard, while the rider stares at his screen and his wheels graze your shopping bag.' 34 词，全文最长，超出节奏规则里长句占比的带宽预期。",
+          "规管句 'I would register every one between 7 and 9 in the morning, fine the dawdlers, and make any pavement rider push it for a mile past the school gates.' 29 词，逼近 30 词线。",
+          "≤4 词句 2 个，刚好压线，终稿需复核不被后续改动挤掉。"
+        ],
+        "fixes": [
+          "长句删 'behind you'，'your shopping bag' → 'your bag'，'his wheels' → 'his wheel'，收到 31 词。",
+          "'make any pavement rider' → 'make a pavement rider'，'push it for a mile' → 'push it a mile'，收到 28 词。",
+          "保留 'That is the trick.'（4 词）与 'Then it went back.'（4 词）两个 ≤4 句。"
+        ]
+      },
+      {
+        "n": 4,
+        "text": "Yes, they are, though I once fancied a gentle scooter ride along the canal towpath. You don't hear them coming. That is the trick. They slip up on the pavement at 15 mph, silent as a dustbin lid sliding across a yard, while the rider stares at his screen and his wheel grazes your bag. I nearly lost my ankle last month outside the station. The boy in a hoodie waved an apology, as if that were a form the council could file.\n\nThe machine weighs more than a suitcase and folds on loose hinges, a kitchen chair that has shed its pegs. Its front wheel can turn on its own, it seems, and the rider sits there with the balance of a sparrow on a washing line. I would register every one between 7 and 9 in the morning, fine the dawdlers, and make a pavement rider push it a mile past the school gates. A bicycle rings a bell. A scooter reaches you before you know it, handlebars already brushing your coat. They park them on the railings, on the bus stop bench, on the flower bed where the old man keeps his marrows. Each one looks manageable until the next corner.\n\nStill, I ordered one myself last spring, after seeing a man glide past looking cheerful. It lived in the hall for a week. Then it went back. Perhaps the menace is only me.",
+        "violations": [
+          "句子 'They slip up on the pavement at 15 mph, silent as a dustbin lid sliding across a yard, while the rider stares at his screen and his wheel grazes your bag.' 31 词，仍是最长句；未触发 ≥30 词比例硬限，保留。",
+          "全文问句 0，≤3 合规；首段无问句不违反节奏要求。",
+          "末句 'Perhaps the menace is only me.' 6 词，自拆台且 ≤15 词，合规，无残留违规。"
+        ],
+        "fixes": []
+      }
+    ]
+  }
+]
